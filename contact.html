@@ -1,0 +1,676 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Contact Us | Implify, Inc.</title>
+   <meta name="description" content="Get in touch with Implify, Inc. — offices in Newark DE (USA), Hyderabad &amp; Noida (India), and San José (Costa Rica). Reach us for consulting, staffing, and outsourcing inquiries.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/mobile.css">
+   <style>
+      /* Contact Highlight Cards */
+      .contact-box { transform: none !important; }
+      .c-highlight { background: #fff; border: 1px solid #e8e8e8; border-radius: 16px; padding: 32px 28px; display: flex; align-items: center; gap: 20px; height: 100%; transition: box-shadow .3s, border-color .3s; }
+      .c-highlight:hover { box-shadow: 0 8px 28px rgba(0,0,0,.09); border-color: var(--tp-theme-primary, #0156FF); }
+      .c-highlight__icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; flex-shrink: 0; }
+      .c-highlight__icon--blue   { background: linear-gradient(135deg, #0156FF, #3a7dff); }
+      .c-highlight__icon--navy   { background: linear-gradient(135deg, #0c1a3a, #1a3060); }
+      .c-highlight__icon--gold   { background: linear-gradient(135deg, #f7941d, #f5a623); }
+      .c-highlight__label { font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; display: block; }
+      .c-highlight__value { font-size: 16px; font-weight: 700; color: #202026; margin: 0; line-height: 1.4; }
+      .c-highlight__value a { color: #202026; text-decoration: none; }
+      .c-highlight__value a:hover { color: var(--tp-theme-primary, #0156FF); }
+
+      /* Form box */
+      .contact-form-box { background: #fff; border-radius: 20px; padding: 50px 50px; box-shadow: 0 8px 40px rgba(0,0,0,.07); border: 1px solid #efefef; }
+      .contact-form-box h3 { font-size: 26px; font-weight: 700; color: #202026; margin-bottom: 6px; }
+      .contact-form-box > p { color: #888; font-size: 15px; margin-bottom: 32px; }
+      .form-field { margin-bottom: 18px; }
+      .form-field input, .form-field textarea, .form-field select { width: 100%; border: 1.5px solid #e4e4e4; border-radius: 10px; padding: 14px 18px; font-size: 15px; color: #333; background: #fff; transition: border-color .3s, box-shadow .3s; outline: none; font-family: inherit; }
+      .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--tp-theme-primary, #0156FF); box-shadow: 0 0 0 3px rgba(1,86,255,.08); }
+      .form-field input::placeholder, .form-field textarea::placeholder { color: #bbb; }
+      .form-field textarea { resize: vertical; min-height: 130px; }
+      .form-field select { appearance: none; -webkit-appearance: none; color: #333; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 18px center; background-color: #fff; }
+      .form-field select option[value=""] { color: #bbb; }
+
+      /* Global Offices */
+      .office-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 16px; padding: 40px 32px; height: 100%; transition: box-shadow .3s, border-color .3s; }
+      .office-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.10); border-color: var(--tp-theme-primary, #0156FF); }
+      .office-card .office-flag { font-size: 36px; margin-bottom: 16px; display: block; }
+      .office-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 20px; color: #202026; }
+      .office-card ul { list-style: none; padding: 0; margin: 0; }
+      .office-card ul li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; color: #555; }
+      .office-card ul li i { color: var(--tp-theme-primary, #0156FF); margin-top: 3px; min-width: 16px; }
+      .office-card ul li a { color: #555; text-decoration: none; }
+      .office-card ul li a:hover { color: var(--tp-theme-primary, #0156FF); }
+
+      /* What to Expect (dark navy) */
+      .expect-area { background: #0c1a3a; padding: 90px 0; }
+      .expect-card { text-align: center; padding: 36px 28px; border-radius: 20px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); height: 100%; transition: background .3s; }
+      .expect-card:hover { background: rgba(255,255,255,.1); }
+      .expect-icon { width: 64px; height: 64px; border-radius: 18px; background: var(--tp-theme-primary, #0156FF); display: flex; align-items: center; justify-content: center; font-size: 26px; color: #fff; margin: 0 auto 20px; }
+      .expect-card h4 { color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+      .expect-card p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.8; margin: 0; }
+
+      /* FAQ Accordion (light grey bg) */
+      .faq-area { background: #f8f9fa; padding: 90px 0; }
+      .faq-item { background: #fff; border-radius: 12px; margin-bottom: 12px; overflow: hidden; border: 1px solid #e8e8e8; }
+      .faq-item__question { padding: 22px 28px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 600; color: #202026; user-select: none; }
+      .faq-item__question i { color: var(--tp-theme-primary, #0156FF); font-size: 16px; transition: transform .3s; flex-shrink: 0; }
+      .faq-item.open .faq-item__question i { transform: rotate(45deg); }
+      .faq-item.open .faq-item__question { color: var(--tp-theme-primary, #0156FF); }
+      .faq-item__answer { padding: 0 28px; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
+      .faq-item.open .faq-item__answer { max-height: 300px; padding: 0 28px 22px; }
+      .faq-item__answer p { color: #666; font-size: 15px; line-height: 1.8; margin: 0; }
+
+      /* CTA */
+      .contact-cta { background: linear-gradient(135deg, #0156FF 0%, #0040cc 100%); padding: 80px 0; text-align: center; }
+      .contact-cta h2 { color: #fff; font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; margin-bottom: 14px; }
+      .contact-cta p { color: rgba(255,255,255,.85); font-size: 16px; margin-bottom: 36px; }
+      .btn-outline-white { display: inline-block; padding: 14px 36px; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background .3s; }
+      .btn-outline-white:hover { background: rgba(255,255,255,.15); color: #fff; }
+
+      @media (max-width: 991px) {
+         .contact-info-card, .contact-form-box { padding: 36px 28px; }
+         .office-card { padding: 28px 20px; }
+      }
+      @media (max-width: 767px) {
+         .contact-info-card, .contact-form-box { padding: 28px 20px; border-radius: 16px; }
+         .faq-item__question { padding: 18px 20px; font-size: 15px; }
+         .faq-item.open .faq-item__answer { padding: 0 20px 18px; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="preloader">
+      <div class="preloader"><span></span><span></span></div>
+   </div>
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+   </button>
+
+   <header>
+      <div id="header-sticky" class="tp-header-area header-pl-pr header-transparent header-border-bottom">
+         <div class="container-fluid">
+            <div class="row g-0 align-items-center">
+               <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                  <div class="tp-logo tp-logo-border">
+                     <a href="index.html">
+                        <img src="assets/img/logo/logo-1.webp" alt="Implify">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl-10 col-lg-10 col-md-8 col-6 d-flex justify-content-end">
+                  <div class="tp-main-menu d-none d-xl-block">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="service.html">Services</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li class="active"><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="tp-header-right">
+                     <ul>
+                        <li><a class="tp-menu-bar" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- offcanvas -->
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__close-btn">
+            <button class="close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="tpoffcanvas__logo pt-50">
+            <a href="index.html"><img src="assets/img/logo/logo-1.webp" alt="Implify"></a>
+         </div>
+         <div class="tpoffcanvas__text">
+            <p>Achieve your Information Technology goals through Implify services.</p>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="tpoffcanvas__info">
+            <h3 class="offcanva-title">Get In Touch</h3>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-envelope"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Email</span>
+                  <a href="mailto:info@implifyinc.com">info@implifyinc.com</a>
+               </div>
+            </div>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-phone-alt"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Phone (US)</span>
+                  <a href="tel:+13025332345">(302) 533 2345</a>
+               </div>
+            </div>
+         </div>
+         <div class="tpoffcanvas__social">
+            <div class="social-icon">
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb -->
+      <section class="breadcrumb__area breadcrumb-height include-bg p-relative" data-background="assets/img/breadcrumb/breadcurmb.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content">
+                     <h3 class="breadcrumb__title wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">Contact Us</h3>
+                     <div class="breadcrumb__list wow tpfadeUp" data-wow-duration=".9s">
+                        <span><a href="index.html">Home</a></span>
+                        <span class="dvdr"><i class="fa fa-angle-right"></i></span>
+                        <span>Contact Us</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Section 1: Contact Highlights + Form (white bg) -->
+      <div class="pt-100 pb-100" style="background:#fff;">
+         <div class="container">
+
+            <!-- Heading -->
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-7 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">Let's Talk</h4>
+                  <h2 class="tp-section-title">Ready to Start a Conversation?</h2>
+                  <p class="mt-16" style="color:#666; font-size:16px; line-height:1.8;">Whether you need IT consulting, specialized staffing, or want to explore an outsourcing partnership — reach out and we'll respond within one business day.</p>
+               </div>
+            </div>
+
+            <!-- 3 Contact Highlight Cards -->
+            <div class="row g-4 mb-50">
+               <div class="col-xl-4 col-lg-4 col-md-4 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="c-highlight">
+                     <div class="c-highlight__icon c-highlight__icon--blue">
+                        <i class="fal fa-phone-alt"></i>
+                     </div>
+                     <div>
+                        <span class="c-highlight__label">Call Us</span>
+                        <p class="c-highlight__value"><a href="tel:+13025332345">(302) 533 2345</a></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="c-highlight">
+                     <div class="c-highlight__icon c-highlight__icon--navy">
+                        <i class="fal fa-envelope"></i>
+                     </div>
+                     <div>
+                        <span class="c-highlight__label">Email Us</span>
+                        <p class="c-highlight__value"><a href="mailto:info@implifyinc.com">info@implifyinc.com</a></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-4 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="c-highlight">
+                     <div class="c-highlight__icon c-highlight__icon--gold">
+                        <i class="fal fa-map-marker-alt"></i>
+                     </div>
+                     <div>
+                        <span class="c-highlight__label">Headquarters</span>
+                        <p class="c-highlight__value">260 Chapman Road, Suite 201C,<br>Newark DE 19702, USA</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Full-width Form -->
+            <div class="row justify-content-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <div class="col-xl-10 col-lg-11 col-12">
+                  <div class="contact-form-box">
+                     <div class="row align-items-center mb-30">
+                        <div class="col-lg-8">
+                           <h3>Send Us a Message</h3>
+                           <p style="margin-bottom:0;">Fill out the form and a member of our team will be in touch within one business day.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                           <div style="display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;">
+                              <a href="#" style="width:38px;height:38px;border-radius:10px;background:#f0f4ff;display:inline-flex;align-items:center;justify-content:center;color:#0156FF;font-size:15px;text-decoration:none;"><i class="fab fa-linkedin"></i></a>
+                              <a href="#" style="width:38px;height:38px;border-radius:10px;background:#f0f4ff;display:inline-flex;align-items:center;justify-content:center;color:#0156FF;font-size:15px;text-decoration:none;"><i class="fab fa-twitter"></i></a>
+                              <a href="#" style="width:38px;height:38px;border-radius:10px;background:#f0f4ff;display:inline-flex;align-items:center;justify-content:center;color:#0156FF;font-size:15px;text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                     <form action="assets/mail.php" method="POST">
+                        <div class="row g-3">
+                           <div class="col-md-6">
+                              <div class="form-field">
+                                 <input type="text" name="name" placeholder="Your full name" required>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="form-field">
+                                 <input type="text" name="company" placeholder="Company name">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="form-field">
+                                 <input type="email" name="email" placeholder="Email address" required>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="form-field">
+                                 <input type="text" name="phone" placeholder="Phone number">
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <div class="form-field">
+                                 <select name="service">
+                                    <option value="" disabled selected>Service interested in</option>
+                                    <option value="technology-transformation">Technology Transformation</option>
+                                    <option value="application-services">Application Services</option>
+                                    <option value="staffing">IT &amp; Non-IT Staffing</option>
+                                    <option value="life-sciences">Life Sciences Consulting</option>
+                                    <option value="outsourcing">Outsourcing Services</option>
+                                    <option value="training">Training &amp; Development</option>
+                                    <option value="other">Other / General Inquiry</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <div class="form-field">
+                                 <textarea name="message" placeholder="Tell us about your project, requirement, or question — the more detail the better"></textarea>
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <button type="submit" class="tp-btn">Send Message <i class="far fa-arrow-right ms-2"></i></button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+      <!-- Section 2: Global Offices (light grey bg) -->
+      <div class="pt-80 pb-80" style="background:#f8f9fa;">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-7 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-green-color">Our Global Presence</h4>
+                  <h2 class="tp-section-title">Three Continents. One Team.</h2>
+                  <p class="mt-16" style="color:#555;">With offices in the US, India, and Costa Rica, Implify delivers nearshore and offshore capabilities that give you the edge in today's global IT market.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+
+               <!-- USA -->
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="office-card">
+                     <span class="office-flag">🇺🇸</span>
+                     <h4>Implify, Inc. (US)</h4>
+                     <ul>
+                        <li><i class="fal fa-map-marker-alt"></i> 260 Chapman Road, Suite 201C,<br>Newark DE 19702, USA</li>
+                        <li><i class="fal fa-phone-alt"></i> <a href="tel:+13025332345">(302) 533 2345</a></li>
+                        <li><i class="fal fa-fax"></i> <a href="tel:+13025332346">(302) 533 2346</a></li>
+                        <li><i class="fal fa-envelope"></i> <a href="mailto:info@implifyinc.com">info@implifyinc.com</a></li>
+                        <li><i class="fal fa-globe"></i> <a href="https://www.implifyinc.com" target="_blank">www.implifyinc.com</a></li>
+                     </ul>
+                  </div>
+               </div>
+
+               <!-- India -->
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="office-card">
+                     <span class="office-flag">🇮🇳</span>
+                     <h4>Implify Technologies (India) Pvt. Ltd.</h4>
+                     <ul>
+                        <li><i class="fal fa-map-marker-alt"></i> H. No. 8-2-334/18, Road No. 3,<br>Banjara Hills, Hyderabad TS 500034</li>
+                        <li><i class="fal fa-envelope"></i> <a href="mailto:info.hyd@implifyinc.com">info.hyd@implifyinc.com</a></li>
+                        <li><i class="fal fa-map-marker-alt"></i> Unit C-56, A/12, Sector 62,<br>NOIDA UP 201301, India</li>
+                     </ul>
+                  </div>
+               </div>
+
+               <!-- Costa Rica -->
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".7s">
+                  <div class="office-card">
+                     <span class="office-flag">🇨🇷</span>
+                     <h4>Implify Limitada (Costa Rica)</h4>
+                     <ul>
+                        <li><i class="fal fa-map-marker-alt"></i> Aves. 2 &amp; 6, Calle 17, N. 233,<br>San José, Costa Rica</li>
+                        <li><i class="fal fa-envelope"></i> <a href="mailto:info.cr@implifyinc.com">info.cr@implifyinc.com</a></li>
+                     </ul>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 3: What to Expect (dark navy) -->
+      <div class="expect-area">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle" style="color:rgba(255,255,255,.6);">No Guesswork</h4>
+                  <h2 class="tp-section-title" style="color:#fff;">What Happens After You Reach Out</h2>
+                  <p style="color:rgba(255,255,255,.7); margin-top:16px;">We respect your time and keep our process transparent so you always know what to expect next.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="expect-card">
+                     <div class="expect-icon"><i class="fas fa-reply"></i></div>
+                     <h4>Response in 1 Business Day</h4>
+                     <p>A real person from our team — not an automated bot — will review and respond to your inquiry within 24 business hours.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="expect-card">
+                     <div class="expect-icon" style="background:#f7941d;"><i class="fas fa-comments"></i></div>
+                     <h4>Discovery Conversation</h4>
+                     <p>We schedule a focused 30-minute call to understand your exact needs, timeline, and goals before recommending any approach.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="expect-card">
+                     <div class="expect-icon" style="background:#27ae60;"><i class="fas fa-file-alt"></i></div>
+                     <h4>Custom Proposal</h4>
+                     <p>Based on your requirements, we provide a tailored solution outline — no off-the-shelf pitch decks or one-size-fits-all answers.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="expect-card">
+                     <div class="expect-icon" style="background:#8e44ad;"><i class="fas fa-rocket"></i></div>
+                     <h4>Fast Kickoff</h4>
+                     <p>Once aligned, we move quickly. Most engagements see first resources or project activity within two weeks of contract signing.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 4: FAQ (light grey bg) -->
+      <div class="faq-area">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">Common Questions</h4>
+                  <h2 class="tp-section-title">Frequently Asked Questions</h2>
+               </div>
+            </div>
+            <div class="row justify-content-center">
+               <div class="col-xl-8 col-lg-10">
+
+                  <div class="faq-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+                     <div class="faq-item__question">
+                        What types of organizations does Implify typically work with?
+                        <i class="fas fa-plus"></i>
+                     </div>
+                     <div class="faq-item__answer">
+                        <p>Implify primarily serves mid-to-large enterprises across Life Sciences, Pharmaceuticals, Biotechnology, Healthcare, Financial Services, and Technology sectors. Our clients include Fortune 500 companies, global pharma firms, emerging biotech, and government-aligned institutions. We're equally effective with organizations that need one specialist consultant or a full delivery team.</p>
+                     </div>
+                  </div>
+
+                  <div class="faq-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+                     <div class="faq-item__question">
+                        How quickly can Implify source and place a qualified consultant?
+                        <i class="fas fa-plus"></i>
+                     </div>
+                     <div class="faq-item__answer">
+                        <p>For most technical and life sciences roles, we can present screened candidates within 48–72 hours of receiving a detailed job description. Specialized or highly regulated roles (such as CSV/CSA or regulatory affairs) may take slightly longer, but we maintain an active talent pool specifically for these disciplines to minimize lead time.</p>
+                     </div>
+                  </div>
+
+                  <div class="faq-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                     <div class="faq-item__question">
+                        Does Implify support remote, hybrid, or on-site engagements?
+                        <i class="fas fa-plus"></i>
+                     </div>
+                     <div class="faq-item__answer">
+                        <p>Yes — we support all three models. Many of our consulting and staffing engagements are fully remote or hybrid, while some regulated life sciences projects require on-site presence at client facilities. We work with you to determine the right model based on your project requirements and compliance needs.</p>
+                     </div>
+                  </div>
+
+                  <div class="faq-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".25s">
+                     <div class="faq-item__question">
+                        Is Implify a certified diversity supplier?
+                        <i class="fas fa-plus"></i>
+                     </div>
+                     <div class="faq-item__answer">
+                        <p>Yes. Implify is a Certified Diversity Supplier by the State of Delaware and a Certified Minority Business Enterprise (MBE) by the City of Philadelphia, Pennsylvania. These certifications make Implify an eligible partner for organizations with supplier diversity procurement requirements in public and private sector programs.</p>
+                     </div>
+                  </div>
+
+                  <div class="faq-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                     <div class="faq-item__question">
+                        Does Implify offer outsourcing or offshore delivery?
+                        <i class="fas fa-plus"></i>
+                     </div>
+                     <div class="faq-item__answer">
+                        <p>Absolutely. Implify's global delivery model includes nearshore capabilities in Costa Rica and offshore development and support centers in India (Hyderabad and NOIDA). These locations allow us to provide cost-effective delivery without sacrificing quality or communication — with teams that integrate seamlessly with your organization.</p>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 5: CTA (blue gradient) -->
+      <div class="contact-cta">
+         <div class="container">
+            <div class="row justify-content-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <div class="col-xl-7 col-lg-9">
+                  <h2>Still Have Questions?</h2>
+                  <p>Our team is ready to answer anything that wasn't covered above. Reach out directly — there's no commitment required to start a conversation.</p>
+                  <div class="d-flex justify-content-center gap-3 flex-wrap">
+                     <a href="mailto:info@implifyinc.com" class="tp-btn" style="background:#fff; color:#0156FF; font-weight:700;">Email Us Directly</a>
+                     <a href="service.html" class="btn-outline-white">Explore Our Services</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- social -->
+      <div class="tp-social-area social-space-bottom fix">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-linkedin">
+                        <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-twitter">
+                        <span><i class="fab fa-twitter"></i> Twitter</span>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </main>
+
+   <footer>
+      <div class="tp-footer-area footer-bg pt-130" data-background="assets/img/footer/footer-bg.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Company</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Services</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="service-details-technology-transformation.html">Technology Transformation</a></li>
+                           <li><a href="service-details.html">Application Services</a></li>
+                           <li><a href="service-details-staffing.html">IT &amp; Non-IT Staffing</a></li>
+                           <li><a href="service-details-life-sciences.html">Life Sciences Consulting</a></li>
+                           <li><a href="service-details-outsourcing.html">Outsourcing Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Certifications</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Certified Diversity Supplier – Delaware</a></li>
+                           <li><a href="#">MBE – City of Philadelphia, PA</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Contact Us</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul class="footer-position">
+                           <li>
+                              <a href="#">
+                                 <span><i class="fal fa-map-marker-alt"></i></span>
+                                 260 Chapman Road, Suite 201C, Newark DE 19702, USA
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailto:info@implifyinc.com">
+                                 <span><i class="fal fa-envelope-open"></i></span>
+                                 info@implifyinc.com
+                              </a>
+                           </li>
+                           <li>
+                              <a href="tel:+13025332345">
+                                 <span><i class="fal fa-phone-alt"></i></span>
+                                 (302) 533 2345
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="tp-newsletter-wrapper z-index-3">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__title">
+                                 <h4 class="tp-newsletter-title">Stay Updated with Industry Insights</h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__input p-relative">
+                                 <form action="#">
+                                    <input type="email" placeholder="Enter your email address">
+                                    <button class="tp-btn-yellow">Subscribe <i class="far fa-arrow-right"></i></button>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copy-right-wrapper z-index-3">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-7 col-12">
+                     <div class="copyright-left text-center text-lg-start">
+                        <p>© 2026 Implify, Inc. All Rights Reserved.</p>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 col-12">
+                     <div class="copyright-right-side text-center text-lg-end">
+                        <ul>
+                           <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                           <li><a href="terms-of-use.html">Terms of Use</a></li>
+                           <li><a href="cookies-policy.html">Cookies Policy</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/counterup.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
+
+   <!-- FAQ accordion script -->
+   <script>
+      document.querySelectorAll('.faq-item__question').forEach(function(q) {
+         q.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+            if (!isOpen) item.classList.add('open');
+         });
+      });
+   </script>
+
+</body>
+</html>

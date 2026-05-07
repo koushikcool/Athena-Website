@@ -1,0 +1,617 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Clients | Implify, Inc. – Trusted by Global Leaders</title>
+   <meta name="description" content="Implify serves world-class organizations including Bristol Myers Squibb, Pfizer, Moderna, J&J, Merck, Gilead, and many more across life sciences, pharma, and technology.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/mobile.css">
+   <style>
+      /* Stat Cards */
+      .trust-stat { border-radius: 16px; padding: 36px 28px; color: #fff; text-align: center; height: 100%; }
+      .trust-stat--blue   { background: linear-gradient(135deg, #0156FF, #3a7dff); }
+      .trust-stat--navy   { background: linear-gradient(135deg, #0c1a3a, #1a3060); }
+      .trust-stat--gold   { background: linear-gradient(135deg, #f7941d, #f5a623); }
+      .trust-stat--green  { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+      .trust-stat h3 { font-size: clamp(36px, 5vw, 52px); font-weight: 900; margin-bottom: 8px; color: #fff !important; }
+      .trust-stat p { font-size: 15px; margin: 0; color: rgba(255,255,255,.92) !important; }
+
+      /* Client Grid (dark navy bg) */
+      .clients-dark-area { background: #0c1a3a; padding: 90px 0; }
+      .client-name-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 28px 20px; text-align: center; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; color: rgba(255,255,255,.88); transition: background .3s, border-color .3s, color .3s; line-height: 1.4; }
+      .client-name-card:hover { background: var(--tp-theme-primary, #0156FF); border-color: var(--tp-theme-primary, #0156FF); color: #fff; }
+
+      /* Industry Grid (light grey bg) */
+      .industry-tile { background: #fff; border-radius: 16px; padding: 32px 20px; text-align: center; border: 1px solid #e8e8e8; transition: box-shadow .3s, border-color .3s, transform .3s; height: 100%; }
+      .industry-tile:hover { box-shadow: 0 8px 28px rgba(0,0,0,.09); border-color: var(--tp-theme-primary, #0156FF); transform: translateY(-4px); }
+      .industry-tile i { font-size: 34px; color: var(--tp-theme-primary, #0156FF); margin-bottom: 14px; display: block; }
+      .industry-tile h5 { font-size: 15px; font-weight: 700; color: #202026; margin-bottom: 8px; }
+      .industry-tile p { font-size: 13px; color: #777; line-height: 1.6; margin: 0; }
+
+      /* Certification Cards (white bg) */
+      .cert-feature { background: #fff; border-radius: 20px; padding: 48px 44px; border-left: 6px solid var(--tp-theme-primary, #0156FF); box-shadow: 0 4px 24px rgba(0,0,0,.07); height: 100%; transition: box-shadow .3s; }
+      .cert-feature:hover { box-shadow: 0 12px 40px rgba(0,0,0,.12); }
+      .cert-feature i { font-size: 44px; color: var(--tp-theme-primary, #0156FF); margin-bottom: 20px; display: block; }
+      .cert-feature h4 { font-size: 20px; font-weight: 700; color: #202026; margin-bottom: 12px; }
+      .cert-feature p { color: #555; line-height: 1.8; margin: 0; }
+
+      /* Partnership Promise (dark navy) */
+      .promise-area { background: #0c1a3a; padding: 90px 0; }
+      .promise-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 40px 32px; height: 100%; text-align: center; transition: background .3s; }
+      .promise-card:hover { background: rgba(255,255,255,.1); }
+      .promise-num { width: 60px; height: 60px; border-radius: 50%; background: var(--tp-theme-primary, #0156FF); color: #fff; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+      .promise-card h4 { color: #fff !important; font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+      .promise-card p { color: rgba(255,255,255,.75) !important; font-size: 15px; line-height: 1.8; margin: 0; }
+
+      /* CTA */
+      .clients-cta { background: linear-gradient(135deg, #0156FF 0%, #0040cc 100%); padding: 90px 0; }
+      .clients-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+      .clients-cta h2 { color: #fff !important; font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; margin-bottom: 12px; }
+      .clients-cta p { color: rgba(255,255,255,.85) !important; font-size: 16px; margin: 0; }
+      .btn-cta-outline { display: inline-block; padding: 14px 36px; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background .3s; }
+      .btn-cta-outline:hover { background: rgba(255,255,255,.15); color: #fff; }
+
+      @media (max-width: 991px) {
+         .clients-cta__inner { flex-direction: column; text-align: center; }
+         .cert-feature { padding: 36px 28px; }
+      }
+      @media (max-width: 767px) {
+         .trust-stat { padding: 28px 20px; }
+         .cert-feature { padding: 28px 24px; margin-bottom: 20px; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="preloader">
+      <div class="preloader"><span></span><span></span></div>
+   </div>
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+   </button>
+
+   <header>
+      <div id="header-sticky" class="tp-header-area header-pl-pr header-transparent header-border-bottom">
+         <div class="container-fluid">
+            <div class="row g-0 align-items-center">
+               <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                  <div class="tp-logo tp-logo-border">
+                     <a href="index.html">
+                        <img src="assets/img/logo/logo-1.webp" alt="Implify">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl-10 col-lg-10 col-md-8 col-6 d-flex justify-content-end">
+                  <div class="tp-main-menu d-none d-xl-block">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="service.html">Services</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li class="active"><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="tp-header-right">
+                     <ul>
+                        <li><a class="tp-menu-bar" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- offcanvas -->
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__close-btn">
+            <button class="close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="tpoffcanvas__logo pt-50">
+            <a href="index.html"><img src="assets/img/logo/logo-1.webp" alt="Implify"></a>
+         </div>
+         <div class="tpoffcanvas__text">
+            <p>Achieve your Information Technology goals through Implify services.</p>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="tpoffcanvas__info">
+            <h3 class="offcanva-title">Get In Touch</h3>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-envelope"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Email</span>
+                  <a href="mailto:info@implifyinc.com">info@implifyinc.com</a>
+               </div>
+            </div>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-phone-alt"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Phone</span>
+                  <a href="tel:+13025332345">(302) 533 2345</a>
+               </div>
+            </div>
+         </div>
+         <div class="tpoffcanvas__social">
+            <div class="social-icon">
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb -->
+      <section class="breadcrumb__area breadcrumb-height include-bg p-relative" data-background="assets/img/breadcrumb/breadcurmb.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content">
+                     <h3 class="breadcrumb__title wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">Our Clients</h3>
+                     <div class="breadcrumb__list wow tpfadeUp" data-wow-duration=".9s">
+                        <span><a href="index.html">Home</a></span>
+                        <span class="dvdr"><i class="fa fa-angle-right"></i></span>
+                        <span>Clients</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Section 1: Intro + Stat Cards (white bg) -->
+      <div class="pt-100 pb-80" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">Trusted Globally</h4>
+                  <h2 class="tp-section-title">World-Class Organizations Choose Implify</h2>
+                  <p class="mt-20" style="font-size:16px; color:#555; line-height:1.9;">Since 2006, Implify has built long-term partnerships with leading organizations across Life Sciences, Pharmaceuticals, Biotechnology, Technology, and beyond — delivering measurable value through every engagement and earning repeat business year after year.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="trust-stat trust-stat--blue">
+                     <h3>50+</h3>
+                     <p>Enterprise Clients Served</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="trust-stat trust-stat--navy">
+                     <h3>19+</h3>
+                     <p>Years of Partnership</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="trust-stat trust-stat--gold">
+                     <h3>250+</h3>
+                     <p>Projects Delivered</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="trust-stat trust-stat--green">
+                     <h3>3</h3>
+                     <p>Global Office Locations</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 2: Client Name Grid (dark navy bg) -->
+      <div class="clients-dark-area">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle" style="color:rgba(255,255,255,.6);">A Proud Portfolio</h4>
+                  <h2 class="tp-section-title" style="color:#fff;">Our Clientele</h2>
+                  <p style="color:rgba(255,255,255,.7); margin-top:16px;">Global leaders who trust Implify to deliver on their most critical technology, consulting, and staffing needs — year after year.</p>
+               </div>
+            </div>
+            <div class="row g-3">
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+                  <div class="client-name-card">Bristol Myers Squibb</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+                  <div class="client-name-card">Eli Lilly</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="client-name-card">Johnson &amp; Johnson</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".25s">
+                  <div class="client-name-card">Pfizer</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="client-name-card">Merck</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="client-name-card">Gilead Sciences</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="client-name-card">Regeneron</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".45s">
+                  <div class="client-name-card">Moderna</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="client-name-card">Vertex Pharmaceuticals</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="client-name-card">Catalent</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="client-name-card">WuXi Biologics</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".45s">
+                  <div class="client-name-card">Beam Therapeutics</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="client-name-card">Legend Biotech</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="client-name-card">Minaris Regenerative Medicine</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="client-name-card">PCI Pharma Services</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".45s">
+                  <div class="client-name-card">NSDC (N·S·D·C)</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="client-name-card">Skill AP (APSSDC)</div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="client-name-card">Virtulearn.in</div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 3: Industries Served (light grey bg) -->
+      <div class="pt-80 pb-80" style="background:#f8f9fa;">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-green-color">Deep Domain Knowledge</h4>
+                  <h2 class="tp-section-title">Industries We Serve</h2>
+                  <p class="mt-16" style="color:#555;">Implify's expertise spans regulated and non-regulated industries, enabling us to bring contextually relevant consulting and staffing solutions to each engagement.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+                  <div class="industry-tile">
+                     <i class="fas fa-pills"></i>
+                     <h5>Pharmaceuticals</h5>
+                     <p>FDA-regulated drug development and manufacturing</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+                  <div class="industry-tile">
+                     <i class="fas fa-dna"></i>
+                     <h5>Biotechnology</h5>
+                     <p>Gene therapy, cell therapy, and biologics</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="industry-tile">
+                     <i class="fas fa-heartbeat"></i>
+                     <h5>Healthcare</h5>
+                     <p>Health systems, EMR, and clinical informatics</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".25s">
+                  <div class="industry-tile">
+                     <i class="fas fa-microchip"></i>
+                     <h5>Technology</h5>
+                     <p>Software, SaaS, and digital-first enterprises</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="industry-tile">
+                     <i class="fas fa-landmark"></i>
+                     <h5>Finance &amp; Insurance</h5>
+                     <p>Banking, fintech, and insurance IT</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="industry-tile">
+                     <i class="fas fa-shopping-cart"></i>
+                     <h5>Retail</h5>
+                     <p>Omnichannel, supply chain, and eCommerce</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="industry-tile">
+                     <i class="fas fa-car"></i>
+                     <h5>Automotive</h5>
+                     <p>Connected vehicle and manufacturing tech</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".45s">
+                  <div class="industry-tile">
+                     <i class="fas fa-signal"></i>
+                     <h5>Telecom</h5>
+                     <p>Network modernization and digital OSS/BSS</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="industry-tile">
+                     <i class="fas fa-industry"></i>
+                     <h5>Manufacturing</h5>
+                     <p>MES, ERP, and smart factory solutions</p>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".55s">
+                  <div class="industry-tile">
+                     <i class="fas fa-graduation-cap"></i>
+                     <h5>Education</h5>
+                     <p>EdTech, LMS, and learning transformation</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 4: Certifications (white bg) -->
+      <div class="pt-80 pb-80" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">Certified &amp; Recognized</h4>
+                  <h2 class="tp-section-title">Our Credentials</h2>
+                  <p class="mt-16" style="color:#555;">Implify's certifications reflect our commitment to diverse, inclusive, and equitable business practices — backed by official recognition from government bodies.</p>
+               </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+               <div class="col-xl-5 col-lg-6 wow tpfadeLeft" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="cert-feature">
+                     <i class="fas fa-certificate"></i>
+                     <h4>Certified Diversity Supplier</h4>
+                     <p>Officially certified as a Diversity Supplier by the State of Delaware, recognizing Implify's role as a diverse-owned business committed to economic inclusion and equal opportunity in government and private sector contracting.</p>
+                  </div>
+               </div>
+               <div class="col-xl-5 col-lg-6 wow tpfadeRight" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="cert-feature" style="border-left-color:#27ae60;">
+                     <i class="fas fa-award" style="color:#27ae60;"></i>
+                     <h4>Certified Minority Business Enterprise (MBE)</h4>
+                     <p>Certified as a Minority Business Enterprise by the City of Philadelphia, Pennsylvania. This designation opens procurement opportunities with public institutions and corporations committed to supplier diversity programs.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 5: Partnership Promise (dark navy) -->
+      <div class="promise-area">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle" style="color:rgba(255,255,255,.6);">Why They Stay</h4>
+                  <h2 class="tp-section-title" style="color:#fff;">What Makes Us a Long-Term Partner</h2>
+                  <p style="color:rgba(255,255,255,.7); margin-top:16px;">Our clients don't just hire us for one project — they return year after year because of the three commitments we honor in every engagement.</p>
+               </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="promise-card">
+                     <div class="promise-num">01</div>
+                     <h4>Consistent Quality</h4>
+                     <p>Every consultant we place and every project we deliver is held to the same rigorous standard. We don't have a tier system — quality is non-negotiable across every engagement, regardless of size.</p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="promise-card">
+                     <div class="promise-num">02</div>
+                     <h4>Deep Domain Understanding</h4>
+                     <p>We don't generalize. Our teams have genuine expertise in life sciences, pharma regulations, enterprise IT, and staffing compliance — which means faster ramp-up and fewer surprises mid-project.</p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="promise-card">
+                     <div class="promise-num">03</div>
+                     <h4>Responsive Partnership</h4>
+                     <p>When requirements shift or a critical role opens up, Implify moves quickly. Our clients have direct access to leadership and a delivery team that treats their urgency as our urgency.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 6: CTA (blue gradient) -->
+      <div class="clients-cta">
+         <div class="container">
+            <div class="clients-cta__inner wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <div>
+                  <h2>Become Our Next<br>Success Story</h2>
+                  <p>Join the growing list of global enterprises that trust Implify to deliver technology consulting, staffing, and outsourcing solutions that make a real difference.</p>
+               </div>
+               <div class="d-flex gap-3 flex-wrap">
+                  <a href="contact.html" class="tp-btn" style="background:#fff; color:#0156FF; font-weight:700;">Contact Us Today</a>
+                  <a href="service.html" class="btn-cta-outline">Explore Services</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- social -->
+      <div class="tp-social-area social-space-bottom fix">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-linkedin">
+                        <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-twitter">
+                        <span><i class="fab fa-twitter"></i> Twitter</span>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </main>
+
+   <footer>
+      <div class="tp-footer-area footer-bg pt-130" data-background="assets/img/footer/footer-bg.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Company</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Services</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="service-details-technology-transformation.html">Technology Transformation</a></li>
+                           <li><a href="service-details.html">Application Services</a></li>
+                           <li><a href="service-details-staffing.html">IT &amp; Non-IT Staffing</a></li>
+                           <li><a href="service-details-life-sciences.html">Life Sciences Consulting</a></li>
+                           <li><a href="service-details-outsourcing.html">Outsourcing Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Certifications</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Certified Diversity Supplier – Delaware</a></li>
+                           <li><a href="#">MBE – City of Philadelphia, PA</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Contact Us</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul class="footer-position">
+                           <li>
+                              <a href="#">
+                                 <span><i class="fal fa-map-marker-alt"></i></span>
+                                 260 Chapman Road, Suite 201C, Newark DE 19702, USA
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailto:info@implifyinc.com">
+                                 <span><i class="fal fa-envelope-open"></i></span>
+                                 info@implifyinc.com
+                              </a>
+                           </li>
+                           <li>
+                              <a href="tel:+13025332345">
+                                 <span><i class="fal fa-phone-alt"></i></span>
+                                 (302) 533 2345
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="tp-newsletter-wrapper z-index-3">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__title">
+                                 <h4 class="tp-newsletter-title">Stay Updated with Industry Insights</h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__input p-relative">
+                                 <form action="#">
+                                    <input type="email" placeholder="Enter your email address">
+                                    <button class="tp-btn-yellow">Subscribe <i class="far fa-arrow-right"></i></button>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copy-right-wrapper z-index-3">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-7 col-12">
+                     <div class="copyright-left text-center text-lg-start">
+                        <p>© 2026 Implify, Inc. All Rights Reserved.</p>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 col-12">
+                     <div class="copyright-right-side text-center text-lg-end">
+                        <ul>
+                           <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                           <li><a href="terms-of-use.html">Terms of Use</a></li>
+                           <li><a href="cookies-policy.html">Cookies Policy</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/counterup.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
+
+</body>
+</html>

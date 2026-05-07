@@ -1,0 +1,219 @@
+/* ============================================================
+   IMPLIFY — MOBILE.CSS  |  Global mobile-responsive overrides
+   Loaded last, after style.css, to ensure highest specificity.
+   ============================================================ */
+
+/* ── Prevent horizontal scroll site-wide ── */
+html, body { overflow-x: hidden; }
+
+/* ── Fluid images everywhere ── */
+img { max-width: 100%; height: auto; }
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TABLET  ≤ 991px
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 991px) {
+
+   /* Section headings */
+   .sh, .section-heading { margin-bottom: 36px; }
+
+   /* Hero — remove floating decorative shapes */
+   .tp-hero-shape-one,
+   .tp-hero-shape-two,
+   .tp-hero-shape-three,
+   .tp-hero-shape-four { display: none; }
+
+   /* Hero image sits below text on tablet */
+   .tp-hero__wrapper-thumb { margin-top: 32px; }
+
+   /* About section circle shape (index) */
+   .tp-ab-shape-two { display: none; }
+
+   /* Service panels: already handled per-page, but reinforce */
+   .svc-panel { flex-direction: column !important; }
+
+   /* Alternating culture / value rows: reinforce column direction */
+   .culture-row,
+   .culture-row--reverse,
+   .value-row,
+   .value-row--reverse { flex-direction: column !important; gap: 24px !important; }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PHONE  ≤ 767px
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 767px) {
+
+   /* ── Section spacing utility overrides ──
+      Cuts spacing.css fixed values down for phones */
+   .pt-40  { padding-top:    28px !important; }
+   .pt-50  { padding-top:    36px !important; }
+   .pt-60  { padding-top:    42px !important; }
+   .pt-80  { padding-top:    50px !important; }
+   .pt-100 { padding-top:    60px !important; }
+   .pt-120 { padding-top:    65px !important; }
+   .pt-130 { padding-top:    65px !important; }
+
+   .pb-40  { padding-bottom: 28px !important; }
+   .pb-50  { padding-bottom: 36px !important; }
+   .pb-60  { padding-bottom: 42px !important; }
+   .pb-80  { padding-bottom: 50px !important; }
+   .pb-100 { padding-bottom: 60px !important; }
+   .pb-120 { padding-bottom: 65px !important; }
+   .pb-130 { padding-bottom: 65px !important; }
+
+   /* ── Section headings ── */
+   .sh, .section-heading { margin-bottom: 28px; }
+   .sh__desc,
+   .section-heading p { font-size: 15px; }
+
+   /* ── Breadcrumb banner (inner-page hero) ── */
+   .breadcrumb__area { padding: 55px 0 !important; min-height: auto !important; }
+   .breadcrumb__title { font-size: 26px !important; line-height: 1.3 !important; }
+
+   /* ── Homepage hero ── */
+   .tp-slider-title { font-size: clamp(24px, 7vw, 32px) !important; line-height: 1.25 !important; }
+   .tp-hero__wrapper { flex-direction: column !important; gap: 12px !important; align-items: flex-start !important; }
+   .tp-hero-button .tp-btn { font-size: 14px; padding: 12px 22px; }
+   .tp-slider-exprience { width: 100% !important; }
+   .tp-slider-exp-item { margin-bottom: 16px !important; }
+
+   /* ── Contact form box ── */
+   .contact-form-box { padding: 28px 20px !important; border-radius: 14px !important; }
+
+   /* ── Contact highlight cards ── */
+   .c-highlight { padding: 20px 16px !important; gap: 14px !important; }
+   .c-highlight__icon { width: 46px !important; height: 46px !important; font-size: 18px !important; flex-shrink: 0; }
+
+   /* ── Office cards ── */
+   .office-card { padding: 26px 20px !important; margin-bottom: 20px; }
+
+   /* ── FAQ ── */
+   .faq-item__question { padding: 16px 18px !important; font-size: 14px !important; }
+   .faq-item.open .faq-item__answer { padding: 0 18px 16px !important; }
+   .faq-item__answer p { font-size: 14px; }
+
+   /* ── Metric / stat cards ── */
+   .trust-stat  { padding: 26px 18px !important; margin-bottom: 16px; }
+   .stat-card   { padding: 28px 20px !important; margin-bottom: 16px; }
+   .svc-stat    { padding: 22px 16px !important; margin-bottom: 16px; }
+
+   /* ── Service panel (page: service.html) ── */
+   .svc-panel { padding: 28px 18px !important; gap: 20px !important; }
+   .svc-panel__icon { width: 72px !important; height: 72px !important; font-size: 28px !important; }
+   .svc-panel__list { grid-template-columns: 1fr !important; }
+
+   /* ── Engagement cards (service.html) ── */
+   .engage-card { padding: 28px 20px !important; margin-bottom: 18px; }
+
+   /* ── Sector / industry tiles ── */
+   .sector-tile  { padding: 22px 12px !important; margin-bottom: 16px; }
+   .industry-tile { padding: 24px 14px !important; margin-bottom: 16px; }
+   .industry-item { padding: 22px 14px !important; }
+
+   /* ── Pillar cards (careers) ── */
+   .pillar-card { padding: 28px 22px !important; }
+   .pillar-card i { font-size: 32px !important; margin-bottom: 14px !important; }
+
+   /* ── Benefit cards (careers dark) ── */
+   .benefit-card { padding: 24px 18px !important; }
+
+   /* ── Open-role cards (careers) ── */
+   .role-card { flex-direction: column !important; align-items: flex-start !important; padding: 18px 20px !important; gap: 14px !important; }
+   .role-card__info { min-width: unset; }
+
+   /* ── Hiring-process step connectors ── */
+   .hire-step__num::after { display: none !important; }
+
+   /* ── Culture icon boxes (careers) ── */
+   .culture-icon-box { width: 72px !important; height: 72px !important; font-size: 30px !important; border-radius: 20px !important; }
+
+   /* ── Cert feature cards (clients) ── */
+   .cert-feature { padding: 28px 22px !important; margin-bottom: 20px; }
+   .cert-feature i { font-size: 36px !important; }
+
+   /* ── Partnership promise cards (clients) ── */
+   .promise-card { padding: 28px 22px !important; margin-bottom: 18px; }
+
+   /* ── Client CTA inner ── */
+   .clients-cta__inner,
+   .svc-cta__inner { flex-direction: column !important; text-align: center !important; }
+
+   /* ── Mission / Vision panels (about) ── */
+   .mv-panel { padding: 28px 22px !important; margin-bottom: 20px !important; }
+   .mv-panel__title { font-size: 22px; }
+
+   /* ── Value icon boxes (about) ── */
+   .value-icon-box { width: 64px !important; height: 64px !important; font-size: 26px !important; border-radius: 16px !important; }
+
+   /* ── Why cards (about) ── */
+   .why-card { padding: 28px 20px !important; margin-bottom: 18px; }
+
+   /* ── Presence cards (about) ── */
+   .presence-card { padding: 28px 20px !important; margin-bottom: 20px; }
+
+   /* ── CTA banner buttons (about/contact) ── */
+   .cta-banner .cta-btns { flex-direction: column; align-items: center; }
+   .cta-banner .cta-btns a { width: 100%; max-width: 280px; text-align: center; }
+
+   /* ── Home CTA ── */
+   .home-cta__inner { flex-direction: column !important; text-align: center !important; }
+   .home-cta__buttons { justify-content: center !important; flex-direction: column; align-items: center; width: 100%; }
+   .home-cta__buttons a { width: 100%; max-width: 280px; text-align: center; }
+
+   /* ── Why Implify check grid (index) ── */
+   .why-check-grid { grid-template-columns: 1fr !important; }
+
+   /* ── Process step arrow connectors (index) ── */
+   .process-step-card::after { display: none !important; }
+
+   /* ── Service cards (index) ── */
+   .svc-card { padding: 28px 22px !important; }
+
+   /* ── Trust strip ── */
+   .trust-strip { padding: 14px 0; }
+   .trust-strip__item { font-size: 13px; gap: 8px; }
+
+   /* ── General button sizing ── */
+   .tp-btn { padding: 13px 26px !important; font-size: 15px !important; }
+   .btn-white, .btn-cta-white { padding: 13px 26px !important; font-size: 14px !important; }
+   .btn-outline-white, .btn-cta-outline { padding: 11px 24px !important; font-size: 14px !important; }
+}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SMALL PHONE  ≤ 480px
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 480px) {
+
+   /* Hero text */
+   .tp-slider-title { font-size: 23px !important; }
+
+   /* Breadcrumb title */
+   .breadcrumb__title { font-size: 22px !important; }
+
+   /* Section headings */
+   .sh__title,
+   .section-heading h2 { font-size: 22px !important; }
+
+   /* Contact form */
+   .contact-form-box { padding: 20px 14px !important; }
+   .form-field input,
+   .form-field textarea,
+   .form-field select { font-size: 14px; padding: 12px 14px; }
+
+   /* Stat numbers */
+   .trust-stat h3,
+   .stat-card__num { font-size: 36px !important; }
+
+   /* Tech tag cloud */
+   .tech-tag { font-size: 12px; padding: 6px 12px; margin: 3px; }
+
+   /* Promise number circles */
+   .promise-num { width: 50px !important; height: 50px !important; font-size: 17px !important; }
+
+   /* Hire step circles */
+   .hire-step__num { width: 58px !important; height: 58px !important; font-size: 20px !important; }
+}

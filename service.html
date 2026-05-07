@@ -1,0 +1,763 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Services | Implify, Inc. – IT Consulting &amp; Staffing Solutions</title>
+   <meta name="description" content="Implify offers Technology Transformation, Application Services, IT Staffing, Life Sciences Consulting, Outsourcing, and Training solutions for global enterprises.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/mobile.css">
+   <style>
+      /* Quick Stats */
+      .svc-stat { background: #fff; border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,.07); }
+      .svc-stat h3 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: var(--tp-theme-primary, #0156FF); margin-bottom: 8px; }
+      .svc-stat p { font-size: 15px; color: #555; margin: 0; }
+
+      /* Service Panels */
+      .svc-panel-area { background: #f8f9fa; padding: 100px 0; }
+      .svc-panel { background: #fff; border-radius: 20px; padding: 50px 44px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 48px; box-shadow: 0 4px 24px rgba(0,0,0,.05); transition: box-shadow .3s; }
+      .svc-panel:hover { box-shadow: 0 12px 40px rgba(0,0,0,.12); }
+      .svc-panel--reverse { flex-direction: row-reverse; }
+      .svc-panel__icon { flex-shrink: 0; width: 110px; height: 110px; border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 44px; color: #fff; }
+      .svc-panel__icon--blue   { background: linear-gradient(135deg, #0156FF, #3a7dff); }
+      .svc-panel__icon--navy   { background: linear-gradient(135deg, #0c1a3a, #1a3060); }
+      .svc-panel__icon--gold   { background: linear-gradient(135deg, #f7941d, #f5a623); }
+      .svc-panel__icon--green  { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+      .svc-panel__icon--purple { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+      .svc-panel__icon--teal   { background: linear-gradient(135deg, #16a085, #1abc9c); }
+      .svc-panel__content { flex: 1; }
+      .svc-panel__content h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; color: #202026; margin-bottom: 12px; }
+      .svc-panel__content p { color: #555; line-height: 1.85; margin-bottom: 20px; }
+      .svc-panel__list { list-style: none; padding: 0; margin: 0 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+      .svc-panel__list li { font-size: 14px; color: #444; display: flex; align-items: center; gap: 8px; }
+      .svc-panel__list li::before { content: ''; display: inline-block; width: 7px; height: 7px; background: var(--tp-theme-primary, #0156FF); border-radius: 50%; flex-shrink: 0; }
+      .svc-panel__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+      .svc-tag { display: inline-block; background: #f0f4ff; color: var(--tp-theme-primary, #0156FF); border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; }
+      .svc-panel__link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-size: 15px; font-weight: 700; color: var(--tp-theme-primary, #0156FF); text-decoration: none; border-bottom: 2px solid transparent; transition: border-color .25s, gap .25s; }
+      .svc-panel__link:hover { border-bottom-color: var(--tp-theme-primary, #0156FF); gap: 12px; color: var(--tp-theme-primary, #0156FF); }
+      .svc-panel__link i { font-size: 13px; transition: transform .25s; }
+      .svc-panel__link:hover i { transform: translateX(4px); }
+
+      /* Technology Expertise (dark navy) */
+      .tech-area { background: #0c1a3a; padding: 90px 0; }
+      .tech-category { margin-bottom: 36px; }
+      .tech-category h5 { color: rgba(255,255,255,.5) !important; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+      .tech-tag { display: inline-block; background: rgba(255,255,255,.07); color: rgba(255,255,255,.88) !important; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: 9px 16px; font-size: 13px; font-weight: 500; margin: 4px; transition: background .25s, border-color .25s; }
+      .tech-tag:hover { background: var(--tp-theme-primary, #0156FF); border-color: var(--tp-theme-primary, #0156FF); }
+
+      /* Engagement Model (white) */
+      .engage-card { background: #fff; border-radius: 20px; padding: 44px 32px; border-top: 4px solid transparent; box-shadow: 0 4px 24px rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s; height: 100%; }
+      .engage-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.12); }
+      .engage-card--1 { border-top-color: #0156FF; }
+      .engage-card--2 { border-top-color: #f7941d; }
+      .engage-card--3 { border-top-color: #27ae60; }
+      .engage-card--4 { border-top-color: #8e44ad; }
+      .engage-num { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 20px; }
+      .engage-card--1 .engage-num { background: #0156FF; }
+      .engage-card--2 .engage-num { background: #f7941d; }
+      .engage-card--3 .engage-num { background: #27ae60; }
+      .engage-card--4 .engage-num { background: #8e44ad; }
+      .engage-card h4 { font-size: 19px; font-weight: 700; margin-bottom: 12px; color: #202026; }
+      .engage-card p { color: #666; line-height: 1.8; margin: 0; font-size: 15px; }
+
+      /* Sector Grid */
+      .sector-tile { background: #fff; border-radius: 14px; padding: 28px 16px; text-align: center; border: 1px solid #e8e8e8; transition: box-shadow .3s, border-color .3s, transform .3s; height: 100%; }
+      .sector-tile:hover { box-shadow: 0 8px 28px rgba(0,0,0,.09); border-color: var(--tp-theme-primary, #0156FF); transform: translateY(-4px); }
+      .sector-tile i { font-size: 30px; color: var(--tp-theme-primary, #0156FF); margin-bottom: 12px; display: block; }
+      .sector-tile span { font-size: 14px; font-weight: 600; color: #202026; line-height: 1.4; display: block; }
+
+      /* CTA */
+      .svc-cta { background: linear-gradient(135deg, #0156FF 0%, #0040cc 100%); padding: 90px 0; }
+      .svc-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+      .svc-cta h2 { color: #fff !important; font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; margin-bottom: 12px; }
+      .svc-cta p { color: rgba(255,255,255,.85) !important; font-size: 16px; margin: 0; }
+      .btn-cta-outline { display: inline-block; padding: 14px 36px; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background .3s, border-color .3s; }
+      .btn-cta-outline:hover { background: rgba(255,255,255,.15); border-color: #fff; color: #fff; }
+
+      @media (max-width: 991px) {
+         .svc-panel { flex-direction: column !important; padding: 36px 28px; gap: 28px; }
+         .svc-panel__icon { width: 80px; height: 80px; font-size: 32px; }
+         .svc-panel__list { grid-template-columns: 1fr; }
+         .svc-cta__inner { flex-direction: column; text-align: center; }
+      }
+      @media (max-width: 767px) {
+         .svc-panel { padding: 28px 20px; }
+         .engage-card { padding: 32px 24px; margin-bottom: 20px; }
+         .svc-stat { padding: 24px 16px; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="preloader">
+      <div class="preloader"><span></span><span></span></div>
+   </div>
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+   </button>
+
+   <header>
+      <div id="header-sticky" class="tp-header-area header-pl-pr header-transparent header-border-bottom">
+         <div class="container-fluid">
+            <div class="row g-0 align-items-center">
+               <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                  <div class="tp-logo tp-logo-border">
+                     <a href="index.html">
+                        <img src="assets/img/logo/logo-1.webp" alt="Implify">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl-10 col-lg-10 col-md-8 col-6 d-flex justify-content-end">
+                  <div class="tp-main-menu d-none d-xl-block">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li class="active"><a href="service.html">Services</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="tp-header-right">
+                     <ul>
+                        <li><a class="tp-menu-bar" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- offcanvas -->
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__close-btn">
+            <button class="close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="tpoffcanvas__logo pt-50">
+            <a href="index.html"><img src="assets/img/logo/logo-1.webp" alt="Implify"></a>
+         </div>
+         <div class="tpoffcanvas__text">
+            <p>Achieve your Information Technology goals through Implify services.</p>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="tpoffcanvas__info">
+            <h3 class="offcanva-title">Get In Touch</h3>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-envelope"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Email</span>
+                  <a href="mailto:info@implifyinc.com">info@implifyinc.com</a>
+               </div>
+            </div>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-phone-alt"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Phone</span>
+                  <a href="tel:+13025332345">(302) 533 2345</a>
+               </div>
+            </div>
+         </div>
+         <div class="tpoffcanvas__social">
+            <div class="social-icon">
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb -->
+      <section class="breadcrumb__area breadcrumb-height include-bg p-relative" data-background="assets/img/breadcrumb/breadcurmb.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content">
+                     <h3 class="breadcrumb__title wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">Our Services</h3>
+                     <div class="breadcrumb__list wow tpfadeUp" data-wow-duration=".9s">
+                        <span><a href="index.html">Home</a></span>
+                        <span class="dvdr"><i class="fa fa-angle-right"></i></span>
+                        <span>Services</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Section 1: Intro + Quick Stats (white bg) -->
+      <div class="pt-100 pb-80" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">What We Offer</h4>
+                  <h2 class="tp-section-title">End-to-End IT Services Built for Enterprise Scale</h2>
+                  <p class="mt-20" style="font-size:16px; color:#555; line-height:1.9;">Since 2006, Implify has delivered technology consulting, staffing, and outsourcing solutions to some of the world's most demanding organizations. From digital transformation roadmaps to hands-on delivery teams, we bring the expertise, talent, and scale to move fast and stay compliant.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="svc-stat">
+                     <h3>19+</h3>
+                     <p>Years Delivering Results</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="svc-stat">
+                     <h3>250+</h3>
+                     <p>Projects Completed</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="svc-stat">
+                     <h3>50+</h3>
+                     <p>Enterprise Clients Served</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="svc-stat">
+                     <h3>6</h3>
+                     <p>Core Service Practices</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 2: Service Panels (light grey bg) -->
+      <div class="svc-panel-area">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-green-color">Six Core Practices</h4>
+                  <h2 class="tp-section-title">Services That Drive Real Business Outcomes</h2>
+               </div>
+            </div>
+
+            <!-- Service 1: Technology Transformation -->
+            <div class="svc-panel wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="svc-panel__icon svc-panel__icon--blue">
+                  <i class="fas fa-rocket"></i>
+               </div>
+               <div class="svc-panel__content">
+                  <h3>Technology Transformation</h3>
+                  <p>Implify guides organizations through comprehensive digital modernization — from legacy system migration and cloud adoption to enterprise architecture redesign. We align your technology stack with business strategy to eliminate technical debt and unlock new growth opportunities.</p>
+                  <ul class="svc-panel__list">
+                     <li>Cloud Migration &amp; Strategy</li>
+                     <li>Enterprise Architecture</li>
+                     <li>Digital Modernization</li>
+                     <li>System Integration</li>
+                     <li>DevSecOps Implementation</li>
+                     <li>IT Roadmap Development</li>
+                  </ul>
+                  <div class="svc-panel__tags">
+                     <span class="svc-tag">AWS</span>
+                     <span class="svc-tag">Azure</span>
+                     <span class="svc-tag">GCP</span>
+                     <span class="svc-tag">Microservices</span>
+                     <span class="svc-tag">API-First Design</span>
+                  </div>
+                  <a href="service-details-technology-transformation.html" class="svc-panel__link">Explore Service <i class="far fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+            <!-- Service 2: Application Services (reversed) -->
+            <div class="svc-panel svc-panel--reverse wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="svc-panel__icon svc-panel__icon--navy">
+                  <i class="fas fa-code"></i>
+               </div>
+               <div class="svc-panel__content">
+                  <h3>Application Services</h3>
+                  <p>From custom application development to maintenance and ongoing support, Implify's engineering teams deliver quality software on time. We cover the full lifecycle — requirements, design, development, QA, deployment, and beyond — using agile methodologies that keep your business competitive.</p>
+                  <ul class="svc-panel__list">
+                     <li>Custom App Development</li>
+                     <li>Web &amp; Mobile Applications</li>
+                     <li>QA &amp; Test Automation</li>
+                     <li>Application Maintenance</li>
+                     <li>DevOps &amp; CI/CD Pipelines</li>
+                     <li>Performance Engineering</li>
+                  </ul>
+                  <div class="svc-panel__tags">
+                     <span class="svc-tag">Java</span>
+                     <span class="svc-tag">.NET</span>
+                     <span class="svc-tag">React</span>
+                     <span class="svc-tag">Python</span>
+                     <span class="svc-tag">Node.js</span>
+                  </div>
+                  <a href="service-details.html" class="svc-panel__link">Explore Service <i class="far fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+            <!-- Service 3: IT & Non-IT Staffing -->
+            <div class="svc-panel wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="svc-panel__icon svc-panel__icon--gold">
+                  <i class="fas fa-users"></i>
+               </div>
+               <div class="svc-panel__content">
+                  <h3>IT &amp; Non-IT Staffing</h3>
+                  <p>Implify's staffing practice places highly qualified professionals — contractors, permanent hires, and contract-to-hire — with organizations that need specialized expertise fast. Our deep talent network and rigorous screening process reduce time-to-hire and improve talent quality across technical and non-technical disciplines.</p>
+                  <ul class="svc-panel__list">
+                     <li>Contract Staffing</li>
+                     <li>Permanent Placement</li>
+                     <li>Contract-to-Hire</li>
+                     <li>Executive Search</li>
+                     <li>On-site &amp; Remote Talent</li>
+                     <li>Compliance &amp; Background Checks</li>
+                  </ul>
+                  <div class="svc-panel__tags">
+                     <span class="svc-tag">IT Roles</span>
+                     <span class="svc-tag">Engineering</span>
+                     <span class="svc-tag">Life Sciences</span>
+                     <span class="svc-tag">Finance</span>
+                     <span class="svc-tag">Healthcare</span>
+                  </div>
+                  <a href="service-details-staffing.html" class="svc-panel__link">Explore Service <i class="far fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+            <!-- Service 4: Life Sciences Consulting (reversed) -->
+            <div class="svc-panel svc-panel--reverse wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="svc-panel__icon svc-panel__icon--green">
+                  <i class="fas fa-flask"></i>
+               </div>
+               <div class="svc-panel__content">
+                  <h3>Life Sciences Consulting</h3>
+                  <p>Implify serves pharmaceutical, biotechnology, and healthcare companies with specialized consulting that bridges IT and regulated science. Our consultants bring hands-on experience in GxP systems, clinical data management, regulatory submissions, and quality assurance processes critical to FDA and EMA compliance.</p>
+                  <ul class="svc-panel__list">
+                     <li>GxP Systems Validation (CSV/CSA)</li>
+                     <li>Regulatory Affairs Support</li>
+                     <li>Clinical Data Management</li>
+                     <li>Quality Management Systems</li>
+                     <li>Electronic Document Management</li>
+                     <li>LIMS &amp; MES Implementation</li>
+                  </ul>
+                  <div class="svc-panel__tags">
+                     <span class="svc-tag">FDA 21 CFR Part 11</span>
+                     <span class="svc-tag">GMP</span>
+                     <span class="svc-tag">GCP</span>
+                     <span class="svc-tag">ICH E6</span>
+                     <span class="svc-tag">Veeva Vault</span>
+                  </div>
+                  <a href="service-details-life-sciences.html" class="svc-panel__link">Explore Service <i class="far fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+            <!-- Service 5: Outsourcing Services -->
+            <div class="svc-panel wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="svc-panel__icon svc-panel__icon--purple">
+                  <i class="fas fa-globe-americas"></i>
+               </div>
+               <div class="svc-panel__content">
+                  <h3>Outsourcing Services</h3>
+                  <p>Implify's global delivery model — with nearshore teams in Costa Rica and offshore centers in India — provides cost-effective, high-quality outsourcing for IT operations, business processes, and application management. We become a seamless extension of your organization, not just a vendor relationship.</p>
+                  <ul class="svc-panel__list">
+                     <li>Managed IT Services</li>
+                     <li>Application Outsourcing</li>
+                     <li>Business Process Outsourcing</li>
+                     <li>Help Desk &amp; IT Support</li>
+                     <li>Infrastructure Management</li>
+                     <li>Offshore Development Centers</li>
+                  </ul>
+                  <div class="svc-panel__tags">
+                     <span class="svc-tag">Nearshore</span>
+                     <span class="svc-tag">Offshore</span>
+                     <span class="svc-tag">24/7 Support</span>
+                     <span class="svc-tag">SLA-Backed</span>
+                  </div>
+                  <a href="service-details-outsourcing.html" class="svc-panel__link">Explore Service <i class="far fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+            <!-- Service 6: Training & Development (reversed) -->
+            <div class="svc-panel svc-panel--reverse wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="svc-panel__icon svc-panel__icon--teal">
+                  <i class="fas fa-graduation-cap"></i>
+               </div>
+               <div class="svc-panel__content">
+                  <h3>Training &amp; Development</h3>
+                  <p>Implify's learning programs equip workforces with the technology skills and domain knowledge needed to thrive. From structured technical bootcamps to customized corporate training, we design curricula that align with real project challenges — bridging the gap between knowledge and hands-on capability.</p>
+                  <ul class="svc-panel__list">
+                     <li>Technical Skills Bootcamps</li>
+                     <li>Corporate Upskilling Programs</li>
+                     <li>Leadership &amp; PM Training</li>
+                     <li>Life Sciences Domain Training</li>
+                     <li>Online &amp; On-site Delivery</li>
+                     <li>Custom Curriculum Design</li>
+                  </ul>
+                  <div class="svc-panel__tags">
+                     <span class="svc-tag">eLearning</span>
+                     <span class="svc-tag">LMS Integration</span>
+                     <span class="svc-tag">Instructor-Led</span>
+                     <span class="svc-tag">Certification Prep</span>
+                  </div>
+                  <a href="service-details-training.html" class="svc-panel__link">Explore Service <i class="far fa-arrow-right"></i></a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+      <!-- Section 3: Technology Expertise (dark navy bg) -->
+      <div class="tech-area">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle" style="color:rgba(255,255,255,.6);">Deep Technical Bench</h4>
+                  <h2 class="tp-section-title" style="color:#fff;">Technology Expertise Across Stacks &amp; Domains</h2>
+                  <p style="color:rgba(255,255,255,.7); margin-top:16px; font-size:16px;">Our consultants and engineers hold certifications and hands-on experience across a wide range of platforms, languages, and frameworks — ready to slot into your environment from day one.</p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeLeft" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="tech-category">
+                     <h5>Cloud Platforms</h5>
+                     <span class="tech-tag">Amazon Web Services</span>
+                     <span class="tech-tag">Microsoft Azure</span>
+                     <span class="tech-tag">Google Cloud</span>
+                     <span class="tech-tag">IBM Cloud</span>
+                     <span class="tech-tag">Oracle Cloud</span>
+                  </div>
+                  <div class="tech-category">
+                     <h5>Languages &amp; Frameworks</h5>
+                     <span class="tech-tag">Java</span>
+                     <span class="tech-tag">Python</span>
+                     <span class="tech-tag">.NET / C#</span>
+                     <span class="tech-tag">React</span>
+                     <span class="tech-tag">Angular</span>
+                     <span class="tech-tag">Node.js</span>
+                     <span class="tech-tag">Go</span>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="tech-category">
+                     <h5>Data &amp; Analytics</h5>
+                     <span class="tech-tag">Snowflake</span>
+                     <span class="tech-tag">Databricks</span>
+                     <span class="tech-tag">Apache Spark</span>
+                     <span class="tech-tag">Tableau</span>
+                     <span class="tech-tag">Power BI</span>
+                     <span class="tech-tag">SQL Server</span>
+                  </div>
+                  <div class="tech-category">
+                     <h5>DevOps &amp; Infrastructure</h5>
+                     <span class="tech-tag">Kubernetes</span>
+                     <span class="tech-tag">Docker</span>
+                     <span class="tech-tag">Terraform</span>
+                     <span class="tech-tag">Jenkins</span>
+                     <span class="tech-tag">GitHub Actions</span>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 wow tpfadeRight" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="tech-category">
+                     <h5>Enterprise Platforms</h5>
+                     <span class="tech-tag">Salesforce</span>
+                     <span class="tech-tag">ServiceNow</span>
+                     <span class="tech-tag">SAP</span>
+                     <span class="tech-tag">Workday</span>
+                     <span class="tech-tag">Microsoft 365</span>
+                  </div>
+                  <div class="tech-category">
+                     <h5>Life Sciences Systems</h5>
+                     <span class="tech-tag">Veeva Vault</span>
+                     <span class="tech-tag">Documentum</span>
+                     <span class="tech-tag">CTMS</span>
+                     <span class="tech-tag">LIMS</span>
+                     <span class="tech-tag">MES</span>
+                     <span class="tech-tag">ERP / ELN</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 4: Engagement Model (white bg) -->
+      <div class="pt-100 pb-100" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">How We Work</h4>
+                  <h2 class="tp-section-title">Our Four-Phase Engagement Model</h2>
+                  <p class="mt-20" style="color:#555;">Every Implify engagement follows a proven methodology that keeps projects on-track, on-budget, and aligned with your strategic objectives from kick-off to completion.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="engage-card engage-card--1">
+                     <div class="engage-num">01</div>
+                     <h4>Discover</h4>
+                     <p>We start with a deep-dive into your current environment, pain points, and business goals. Stakeholder interviews and technical assessments define true scope and surface hidden risks.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="engage-card engage-card--2">
+                     <div class="engage-num">02</div>
+                     <h4>Design</h4>
+                     <p>Our architects and subject-matter experts craft solution blueprints, resource plans, and delivery timelines tailored to your specific constraints, team structure, and KPIs.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="engage-card engage-card--3">
+                     <div class="engage-num">03</div>
+                     <h4>Deliver</h4>
+                     <p>Agile sprints, transparent reporting, and senior oversight ensure quality delivery at pace. We adapt quickly to shifting requirements without losing momentum or quality.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="engage-card engage-card--4">
+                     <div class="engage-num">04</div>
+                     <h4>Optimize</h4>
+                     <p>Post-delivery, we measure outcomes against defined success criteria and provide ongoing optimization recommendations to ensure lasting, compounding business value.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 5: Industries We Serve (light grey bg) -->
+      <div class="pt-80 pb-100" style="background:#f8f9fa;">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-green-color">Cross-Industry Expertise</h4>
+                  <h2 class="tp-section-title">Industries We Serve</h2>
+                  <p class="mt-16" style="color:#555;">Implify's consultants bring deep domain knowledge across regulated and non-regulated sectors, enabling contextually relevant solutions from day one.</p>
+               </div>
+            </div>
+            <div class="row g-3">
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+                  <div class="sector-tile"><i class="fas fa-pills"></i><span>Pharmaceuticals</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+                  <div class="sector-tile"><i class="fas fa-dna"></i><span>Biotechnology</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="sector-tile"><i class="fas fa-heartbeat"></i><span>Healthcare</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".25s">
+                  <div class="sector-tile"><i class="fas fa-landmark"></i><span>Finance &amp; Banking</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="sector-tile"><i class="fas fa-microchip"></i><span>Technology</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="sector-tile"><i class="fas fa-shopping-cart"></i><span>Retail</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="sector-tile"><i class="fas fa-car"></i><span>Automotive</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".45s">
+                  <div class="sector-tile"><i class="fas fa-industry"></i><span>Manufacturing</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="sector-tile"><i class="fas fa-signal"></i><span>Telecom</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".55s">
+                  <div class="sector-tile"><i class="fas fa-shield-alt"></i><span>Insurance</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".6s">
+                  <div class="sector-tile"><i class="fas fa-university"></i><span>Education</span></div>
+               </div>
+               <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="sector-tile"><i class="fas fa-building"></i><span>Public Sector</span></div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 6: CTA (blue gradient) -->
+      <div class="svc-cta">
+         <div class="container">
+            <div class="svc-cta__inner wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <div>
+                  <h2>Ready to Transform Your<br>Technology Operations?</h2>
+                  <p>Let's talk about how Implify can accelerate your next initiative — from staffing to full-scale delivery.</p>
+               </div>
+               <div class="d-flex gap-3 flex-wrap">
+                  <a href="contact.html" class="tp-btn" style="background:#fff; color:#0156FF; font-weight:700;">Get in Touch</a>
+                  <a href="about-us.html" class="btn-cta-outline">About Implify</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- social -->
+      <div class="tp-social-area social-space-bottom fix">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-linkedin">
+                        <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-twitter">
+                        <span><i class="fab fa-twitter"></i> Twitter</span>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </main>
+
+   <footer>
+      <div class="tp-footer-area footer-bg pt-130" data-background="assets/img/footer/footer-bg.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Company</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Services</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="service-details-technology-transformation.html">Technology Transformation</a></li>
+                           <li><a href="service-details.html">Application Services</a></li>
+                           <li><a href="service-details-staffing.html">IT &amp; Non-IT Staffing</a></li>
+                           <li><a href="service-details-life-sciences.html">Life Sciences Consulting</a></li>
+                           <li><a href="service-details-outsourcing.html">Outsourcing Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Certifications</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Certified Diversity Supplier – Delaware</a></li>
+                           <li><a href="#">MBE – City of Philadelphia, PA</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Contact Us</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul class="footer-position">
+                           <li>
+                              <a href="#">
+                                 <span><i class="fal fa-map-marker-alt"></i></span>
+                                 260 Chapman Road, Suite 201C, Newark DE 19702, USA
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailto:info@implifyinc.com">
+                                 <span><i class="fal fa-envelope-open"></i></span>
+                                 info@implifyinc.com
+                              </a>
+                           </li>
+                           <li>
+                              <a href="tel:+13025332345">
+                                 <span><i class="fal fa-phone-alt"></i></span>
+                                 (302) 533 2345
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="tp-newsletter-wrapper z-index-3">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__title">
+                                 <h4 class="tp-newsletter-title">Stay Updated with Industry Insights</h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__input p-relative">
+                                 <form action="#">
+                                    <input type="email" placeholder="Enter your email address">
+                                    <button class="tp-btn-yellow">Subscribe <i class="far fa-arrow-right"></i></button>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copy-right-wrapper z-index-3">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-7 col-12">
+                     <div class="copyright-left text-center text-lg-start">
+                        <p>© 2026 Implify, Inc. All Rights Reserved.</p>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 col-12">
+                     <div class="copyright-right-side text-center text-lg-end">
+                        <ul>
+                           <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                           <li><a href="terms-of-use.html">Terms of Use</a></li>
+                           <li><a href="cookies-policy.html">Cookies Policy</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/counterup.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
+
+</body>
+</html>

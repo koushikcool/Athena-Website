@@ -1,0 +1,694 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Careers | Implify, Inc. – Build Your Future in IT Consulting</title>
+   <meta name="description" content="Join Implify — an IT consulting and staffing firm where talented professionals work on high-impact projects for global enterprise clients. Explore open roles today.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/mobile.css">
+   <style>
+      /* Why Join — colored pillar cards */
+      .pillar-card { border-radius: 20px; padding: 44px 36px; height: 100%; overflow: hidden; }
+      .pillar-card--blue   { background: linear-gradient(135deg, #0156FF, #3a7dff); }
+      .pillar-card--navy   { background: linear-gradient(135deg, #0c1a3a, #1a3060); }
+      .pillar-card--gold   { background: linear-gradient(135deg, #f7941d, #f5a623); }
+      .pillar-card--green  { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+      .pillar-card i { font-size: 40px; margin-bottom: 20px; display: block; color: rgba(255,255,255,.9) !important; }
+      .pillar-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 14px; color: #fff !important; }
+      .pillar-card p { font-size: 15px; line-height: 1.8; margin: 0; color: rgba(255,255,255,.88) !important; }
+
+      /* Benefits — dark navy bg */
+      .benefits-area { background: #0c1a3a; padding: 90px 0; }
+      .benefit-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 32px 28px; text-align: center; transition: background .3s; height: 100%; }
+      .benefit-card:hover { background: rgba(255,255,255,.1); }
+      .benefit-card i { font-size: 36px; color: var(--tp-theme-primary, #0156FF); margin-bottom: 16px; display: block; }
+      .benefit-card h5 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+      .benefit-card p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.7; margin: 0; }
+
+      /* Open Roles — white bg */
+      .role-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; transition: box-shadow .3s, border-color .3s; margin-bottom: 16px; }
+      .role-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.09); border-color: var(--tp-theme-primary, #0156FF); }
+      .role-card__info { flex: 1; min-width: 200px; }
+      .role-card__info h4 { font-size: 17px; font-weight: 700; color: #202026; margin-bottom: 8px; }
+      .role-card__meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+      .role-tag { display: inline-flex; align-items: center; gap: 6px; background: #f0f4ff; color: var(--tp-theme-primary, #0156FF); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; }
+      .role-tag--grey { background: #f4f4f4; color: #555; }
+      .role-tag--green { background: #e8f8f0; color: #27ae60; }
+
+      /* Hiring Process — grey bg */
+      .hire-step { text-align: center; position: relative; }
+      .hire-step__num { width: 70px; height: 70px; border-radius: 50%; background: var(--tp-theme-primary, #0156FF); color: #fff; font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; position: relative; z-index: 1; }
+      .hire-step__num::after { content: ''; position: absolute; top: 50%; right: -100%; width: 100%; height: 2px; background: #dde; z-index: 0; }
+      .hire-step:last-child .hire-step__num::after { display: none; }
+      .hire-step h4 { font-size: 16px; font-weight: 700; color: #202026; margin-bottom: 10px; }
+      .hire-step p { font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+
+      /* Culture section — alternating rows */
+      .culture-row { display: flex; align-items: center; gap: 48px; margin-bottom: 60px; }
+      .culture-row--reverse { flex-direction: row-reverse; }
+      .culture-icon-box { flex-shrink: 0; width: 100px; height: 100px; border-radius: 28px; display: flex; align-items: center; justify-content: center; font-size: 44px; color: #fff !important; }
+      .culture-icon-box--blue   { background: linear-gradient(135deg, #0156FF, #3a7dff); }
+      .culture-icon-box--teal   { background: linear-gradient(135deg, #16a085, #1abc9c); }
+      .culture-icon-box--purple { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+      .culture-row__text { flex: 1; }
+      .culture-row__text h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; color: #202026; margin-bottom: 14px; }
+      .culture-row__text p { color: #555; line-height: 1.85; margin: 0; }
+
+      /* CTA */
+      .careers-cta { background: linear-gradient(135deg, #0156FF 0%, #0040cc 100%); padding: 90px 0; }
+      .careers-cta h2 { color: #fff !important; font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; margin-bottom: 16px; }
+      .careers-cta p { color: rgba(255,255,255,.85) !important; font-size: 16px; margin-bottom: 36px; }
+      .btn-outline-white { display: inline-block; padding: 14px 36px; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background .3s; }
+      .btn-outline-white:hover { background: rgba(255,255,255,.15); color: #fff; }
+
+      @media (max-width: 991px) {
+         .culture-row { flex-direction: column !important; gap: 28px; }
+         .culture-icon-box { width: 80px; height: 80px; font-size: 36px; }
+      }
+      @media (max-width: 767px) {
+         .pillar-card { padding: 32px 24px; }
+         .benefit-card { padding: 24px 20px; }
+         .role-card { padding: 20px 24px; }
+         .hire-step__num::after { display: none; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="preloader">
+      <div class="preloader"><span></span><span></span></div>
+   </div>
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+   </button>
+
+   <header>
+      <div id="header-sticky" class="tp-header-area header-pl-pr header-transparent header-border-bottom">
+         <div class="container-fluid">
+            <div class="row g-0 align-items-center">
+               <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                  <div class="tp-logo tp-logo-border">
+                     <a href="index.html">
+                        <img src="assets/img/logo/logo-1.webp" alt="Implify">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl-10 col-lg-10 col-md-8 col-6 d-flex justify-content-end">
+                  <div class="tp-main-menu d-none d-xl-block">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="service.html">Services</a></li>
+                           <li class="active"><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="tp-header-right">
+                     <ul>
+                        <li><a class="tp-menu-bar" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- offcanvas -->
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__close-btn">
+            <button class="close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="tpoffcanvas__logo pt-50">
+            <a href="index.html"><img src="assets/img/logo/logo-1.webp" alt="Implify"></a>
+         </div>
+         <div class="tpoffcanvas__text">
+            <p>Achieve your Information Technology goals through Implify services.</p>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="tpoffcanvas__info">
+            <h3 class="offcanva-title">Get In Touch</h3>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-envelope"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Email</span>
+                  <a href="mailto:info@implifyinc.com">info@implifyinc.com</a>
+               </div>
+            </div>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-phone-alt"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Phone</span>
+                  <a href="tel:+13025332345">(302) 533 2345</a>
+               </div>
+            </div>
+         </div>
+         <div class="tpoffcanvas__social">
+            <div class="social-icon">
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb -->
+      <section class="breadcrumb__area breadcrumb-height include-bg p-relative" data-background="assets/img/breadcrumb/breadcurmb.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content">
+                     <h3 class="breadcrumb__title wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">Careers at Implify</h3>
+                     <div class="breadcrumb__list wow tpfadeUp" data-wow-duration=".9s">
+                        <span><a href="index.html">Home</a></span>
+                        <span class="dvdr"><i class="fa fa-angle-right"></i></span>
+                        <span>Careers</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Section 1: Why Join Implify (white bg, colored pillar cards) -->
+      <div class="pt-100 pb-100" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">Build Your Career</h4>
+                  <h2 class="tp-section-title">Why Professionals Choose Implify</h2>
+                  <p class="mt-20" style="color:#555; font-size:16px; line-height:1.9;">At Implify, you don't just fill a seat — you join a team that values expertise, rewards initiative, and connects talent with some of the most consequential IT projects in life sciences, pharma, finance, and technology.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="pillar-card pillar-card--blue">
+                     <i class="fas fa-rocket"></i>
+                     <h4>High-Impact Work</h4>
+                     <p>Work on digital transformation projects for Fortune 500 companies, leading pharma firms, and global technology organizations where your contributions make a visible difference.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="pillar-card pillar-card--navy">
+                     <i class="fas fa-chart-line"></i>
+                     <h4>Continuous Growth</h4>
+                     <p>Access structured learning programs, certification support, mentorship from senior consultants, and regular opportunities to expand into new domains and technologies.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="pillar-card pillar-card--gold">
+                     <i class="fas fa-globe"></i>
+                     <h4>Global Exposure</h4>
+                     <p>With offices in the US, India, and Costa Rica — and clients across multiple continents — Implify opens doors to international collaboration and cross-cultural career experiences.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="pillar-card pillar-card--green">
+                     <i class="fas fa-handshake"></i>
+                     <h4>People-First Culture</h4>
+                     <p>We invest in our people. Competitive compensation, flexible work arrangements, a supportive management team, and a genuine commitment to work-life balance define life at Implify.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 2: Benefits & Perks (dark navy bg) -->
+      <div class="benefits-area">
+         <div class="container">
+            <div class="row justify-content-center mb-50">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle" style="color:rgba(255,255,255,.6);">What You Get</h4>
+                  <h2 class="tp-section-title" style="color:#fff;">Benefits &amp; Perks</h2>
+                  <p style="color:rgba(255,255,255,.7); margin-top:16px;">We go beyond a paycheck. Implify offers a comprehensive package designed to support your career, health, and personal wellbeing.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+                  <div class="benefit-card">
+                     <i class="fas fa-money-bill-wave"></i>
+                     <h5>Competitive Compensation</h5>
+                     <p>Market-rate salaries benchmarked annually, with performance bonuses and merit reviews.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="benefit-card">
+                     <i class="fas fa-heartbeat"></i>
+                     <h5>Health &amp; Wellness</h5>
+                     <p>Comprehensive medical, dental, and vision coverage for you and your dependents.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="benefit-card">
+                     <i class="fas fa-graduation-cap"></i>
+                     <h5>Learning Sponsorship</h5>
+                     <p>Paid training, certification reimbursement, and access to our internal learning programs.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="benefit-card">
+                     <i class="fas fa-laptop-house"></i>
+                     <h5>Flexible Work</h5>
+                     <p>Remote, hybrid, and on-site options — we adapt to roles, client needs, and your lifestyle.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="benefit-card">
+                     <i class="fas fa-umbrella"></i>
+                     <h5>Paid Time Off</h5>
+                     <p>Generous PTO, federal holidays, and additional leave for volunteering and personal wellness.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".6s">
+                  <div class="benefit-card">
+                     <i class="fas fa-piggy-bank"></i>
+                     <h5>401(k) Retirement</h5>
+                     <p>Company-matched retirement savings plan to help you build financial security for the future.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".7s">
+                  <div class="benefit-card">
+                     <i class="fas fa-users"></i>
+                     <h5>Team Events</h5>
+                     <p>Regular team-building events, knowledge-sharing sessions, and company off-sites to stay connected.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".8s">
+                  <div class="benefit-card">
+                     <i class="fas fa-award"></i>
+                     <h5>Recognition Programs</h5>
+                     <p>Peer and manager recognition, performance awards, and spotlights on exceptional contributions.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 3: Open Roles (white bg) -->
+      <div class="pt-100 pb-80" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-green-color">Join the Team</h4>
+                  <h2 class="tp-section-title">Current Open Positions</h2>
+                  <p class="mt-20" style="color:#555;">We're always looking for talented professionals across consulting, engineering, life sciences, and business operations. Don't see a perfect fit? Send us your resume anyway — we hire for potential.</p>
+               </div>
+            </div>
+
+            <!-- Technology Roles -->
+            <h5 class="mb-20 mt-10" style="color:#0156FF; font-weight:700; text-transform:uppercase; font-size:12px; letter-spacing:2px;">Technology &amp; Engineering</h5>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>Full Stack Software Engineer</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Remote / Newark, DE</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Full-Time</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>Cloud Solutions Architect</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Remote / Hybrid</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Contract</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>QA Automation Engineer</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Full-Time / Contract</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".25s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>Senior Data Engineer</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Remote / Client Site</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Contract-to-Hire</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+
+            <!-- Life Sciences Roles -->
+            <h5 class="mb-20 mt-40" style="color:#27ae60; font-weight:700; text-transform:uppercase; font-size:12px; letter-spacing:2px;">Life Sciences &amp; Pharma</h5>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>Life Sciences IT Consultant (CSV/CSA)</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> New Jersey / Remote</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Contract</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>Regulatory Affairs Specialist</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Philadelphia, PA</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Full-Time</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+
+            <!-- Business & Operations -->
+            <h5 class="mb-20 mt-40" style="color:#8e44ad; font-weight:700; text-transform:uppercase; font-size:12px; letter-spacing:2px;">Business &amp; Operations</h5>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".1s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>IT Project Manager / Scrum Master</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Remote / Newark, DE</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Full-Time</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+            <div class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".15s">
+               <div class="role-card">
+                  <div class="role-card__info">
+                     <h4>Technical IT Recruiter</h4>
+                     <div class="role-card__meta">
+                        <span class="role-tag"><i class="fas fa-map-marker-alt"></i> Newark, DE (Hybrid)</span>
+                        <span class="role-tag role-tag--grey"><i class="fas fa-briefcase"></i> Full-Time</span>
+                        <span class="role-tag role-tag--green"><i class="fas fa-circle"></i> Actively Hiring</span>
+                     </div>
+                  </div>
+                  <a href="contact.html" class="tp-btn flex-shrink-0">Apply Now</a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+      <!-- Section 4: Hiring Process (light grey bg) -->
+      <div class="pt-80 pb-100" style="background:#f8f9fa;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-yellow-color">Simple &amp; Transparent</h4>
+                  <h2 class="tp-section-title">Our Hiring Process</h2>
+                  <p class="mt-20" style="color:#555;">We respect your time. Our hiring process is straightforward, typically completing in under three weeks from application to offer.</p>
+               </div>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".2s">
+                  <div class="hire-step">
+                     <div class="hire-step__num">01</div>
+                     <h4>Apply</h4>
+                     <p>Submit your resume via our contact page or email us at <a href="mailto:careers@implifyinc.com" style="color:#0156FF;">careers@implifyinc.com</a>. We review every application personally.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".35s">
+                  <div class="hire-step">
+                     <div class="hire-step__num">02</div>
+                     <h4>Screening Call</h4>
+                     <p>A 20-minute call with our recruiting team to understand your background, expectations, and interest in the role. We'll share details about the engagement and our culture.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="hire-step">
+                     <div class="hire-step__num">03</div>
+                     <h4>Technical Interview</h4>
+                     <p>A focused technical or domain interview with a senior Implify consultant or hiring manager — no trick questions, just a real conversation about your experience and approach.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".65s">
+                  <div class="hire-step">
+                     <div class="hire-step__num">04</div>
+                     <h4>Offer &amp; Onboard</h4>
+                     <p>Receive a competitive offer, complete onboarding paperwork, and get introduced to your team. We make sure your first days are supported and productive.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 5: Our Culture (white bg, alternating rows) -->
+      <div class="pt-80 pb-80" style="background:#fff;">
+         <div class="container">
+            <div class="row justify-content-center mb-60">
+               <div class="col-xl-8 text-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <h4 class="tp-section-subtitle tp-green-color">Life at Implify</h4>
+                  <h2 class="tp-section-title">A Culture Built for Achievers</h2>
+               </div>
+            </div>
+            <div class="culture-row wow tpfadeLeft" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="culture-icon-box culture-icon-box--blue">
+                  <i class="fas fa-lightbulb"></i>
+               </div>
+               <div class="culture-row__text">
+                  <h3>Innovation is Expected, Not Just Welcomed</h3>
+                  <p>We encourage consultants and engineers at every level to bring new ideas to the table. Whether it's a better way to automate a test suite or a novel approach to a regulatory validation challenge, Implify is a place where smart thinking gets noticed and rewarded. We invest in proof-of-concept time and internal innovation sprints.</p>
+               </div>
+            </div>
+            <div class="culture-row culture-row--reverse wow tpfadeRight" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="culture-icon-box culture-icon-box--teal">
+                  <i class="fas fa-balance-scale"></i>
+               </div>
+               <div class="culture-row__text">
+                  <h3>Diversity, Equity &amp; Inclusion</h3>
+                  <p>As a certified Minority Business Enterprise and Certified Diversity Supplier, inclusion is embedded in our identity — not just a policy. Our team spans nationalities, backgrounds, and disciplines. We actively cultivate an environment where every voice is heard and every career trajectory is supported with equal intentionality.</p>
+               </div>
+            </div>
+            <div class="culture-row wow tpfadeLeft" data-wow-duration=".7s" data-wow-delay=".2s">
+               <div class="culture-icon-box culture-icon-box--purple">
+                  <i class="fas fa-trophy"></i>
+               </div>
+               <div class="culture-row__text">
+                  <h3>Growth That Compounds Over Time</h3>
+                  <p>Implify is a place where careers are built, not just paused. With clearly defined growth paths, regular 1-on-1 mentorship from senior leaders, and a learning budget that covers everything from cloud certifications to domain-specific workshops, your professional growth is a shared priority from day one.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Section 6: CTA (blue gradient) -->
+      <div class="careers-cta text-center">
+         <div class="container">
+            <div class="row justify-content-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <div class="col-xl-7 col-lg-9">
+                  <h2>Don't See Your Role Listed?</h2>
+                  <p>We hire for skills, passion, and potential — not just open requisitions. Send your resume and a brief note about what kind of work excites you. We read every message.</p>
+                  <div class="d-flex justify-content-center gap-3 flex-wrap">
+                     <a href="contact.html" class="tp-btn" style="background:#fff; color:#0156FF; font-weight:700;">Send Your Resume</a>
+                     <a href="service.html" class="btn-outline-white">Explore Our Services</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- social -->
+      <div class="tp-social-area social-space-bottom fix">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-linkedin">
+                        <span><i class="fab fa-linkedin"></i> LinkedIn</span>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-md-6 text-center">
+                  <a href="#">
+                     <div class="tp-social-item tp-twitter">
+                        <span><i class="fab fa-twitter"></i> Twitter</span>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </main>
+
+   <footer>
+      <div class="tp-footer-area footer-bg pt-130" data-background="assets/img/footer/footer-bg.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Company</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Services</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="service-details-technology-transformation.html">Technology Transformation</a></li>
+                           <li><a href="service-details.html">Application Services</a></li>
+                           <li><a href="service-details-staffing.html">IT &amp; Non-IT Staffing</a></li>
+                           <li><a href="service-details-life-sciences.html">Life Sciences Consulting</a></li>
+                           <li><a href="service-details-outsourcing.html">Outsourcing Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Certifications</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Certified Diversity Supplier – Delaware</a></li>
+                           <li><a href="#">MBE – City of Philadelphia, PA</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Contact Us</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul class="footer-position">
+                           <li>
+                              <a href="#">
+                                 <span><i class="fal fa-map-marker-alt"></i></span>
+                                 260 Chapman Road, Suite 201C, Newark DE 19702, USA
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailto:info@implifyinc.com">
+                                 <span><i class="fal fa-envelope-open"></i></span>
+                                 info@implifyinc.com
+                              </a>
+                           </li>
+                           <li>
+                              <a href="tel:+13025332345">
+                                 <span><i class="fal fa-phone-alt"></i></span>
+                                 (302) 533 2345
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="tp-newsletter-wrapper z-index-3">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__title">
+                                 <h4 class="tp-newsletter-title">Stay Updated with Industry Insights</h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__input p-relative">
+                                 <form action="#">
+                                    <input type="email" placeholder="Enter your email address">
+                                    <button class="tp-btn-yellow">Subscribe <i class="far fa-arrow-right"></i></button>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copy-right-wrapper z-index-3">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-7 col-12">
+                     <div class="copyright-left text-center text-lg-start">
+                        <p>© 2026 Implify, Inc. All Rights Reserved.</p>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 col-12">
+                     <div class="copyright-right-side text-center text-lg-end">
+                        <ul>
+                           <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                           <li><a href="terms-of-use.html">Terms of Use</a></li>
+                           <li><a href="cookies-policy.html">Cookies Policy</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/counterup.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
+
+</body>
+</html>

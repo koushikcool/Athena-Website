@@ -1,0 +1,720 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Implify, Inc. | IT Consulting, Staffing &amp; Life Sciences Services</title>
+   <meta name="description" content="Implify, Inc. is a minority-owned IT consulting and staffing firm delivering technology transformation, life sciences CQV/CSV, enterprise automation, and outsourcing services from Newark, DE.">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/mobile.css">
+   <style>
+
+      /* ── TRUST STRIP ── */
+      .trust-strip { background: var(--tp-theme-primary, #0156FF); padding: 18px 0; overflow: hidden; }
+      .trust-strip__track { display: flex; gap: 60px; animation: marquee 28s linear infinite; white-space: nowrap; }
+      .trust-strip__track:hover { animation-play-state: paused; }
+      .trust-strip__item { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.85); letter-spacing: .5px; display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+      .trust-strip__item i { font-size: 16px; opacity: .7; }
+      @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+      /* ── SERVICES GRID ── */
+      .services-grid-area { background: #f8f9fa; padding: 90px 0; }
+      .svc-card {
+         background: #fff;
+         border-radius: 16px;
+         padding: 36px 28px;
+         height: 100%;
+         position: relative;
+         overflow: hidden;
+         transition: box-shadow .25s, transform .25s;
+         border-top: 4px solid transparent;
+      }
+      .svc-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,.1); transform: translateY(-5px); }
+      .svc-card--blue   { border-top-color: #0156FF; }
+      .svc-card--gold   { border-top-color: #f7941d; }
+      .svc-card--green  { border-top-color: #27ae60; }
+      .svc-card--purple { border-top-color: #8e44ad; }
+      .svc-card--teal   { border-top-color: #16a085; }
+      .svc-card--red    { border-top-color: #e74c3c; }
+      .svc-card__icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; margin-bottom: 20px; }
+      .svc-card--blue   .svc-card__icon { background: #0156FF; }
+      .svc-card--gold   .svc-card__icon { background: #f7941d; }
+      .svc-card--green  .svc-card__icon { background: #27ae60; }
+      .svc-card--purple .svc-card__icon { background: #8e44ad; }
+      .svc-card--teal   .svc-card__icon { background: #16a085; }
+      .svc-card--red    .svc-card__icon { background: #e74c3c; }
+      .svc-card__title { font-size: 19px; font-weight: 700; color: #202026; margin-bottom: 12px; }
+      .svc-card__text { font-size: 14px; color: #666; line-height: 1.75; margin-bottom: 20px; }
+      .svc-card__link { font-size: 14px; font-weight: 600; color: var(--tp-theme-primary,#0156FF); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+      .svc-card__link:hover { gap: 10px; }
+
+      /* ── PROCESS STEPS ── */
+      .process-area { background: #fff; padding: 90px 0; }
+      .process-step-card { text-align: center; padding: 20px; position: relative; }
+      .process-step-card::after {
+         content: '\f061';
+         font-family: 'Font Awesome 5 Pro';
+         font-weight: 400;
+         position: absolute;
+         right: -16px;
+         top: 50%;
+         transform: translateY(-50%);
+         font-size: 20px;
+         color: #ccc;
+      }
+      .process-step-card:last-child::after { display: none; }
+      .process-num {
+         width: 64px; height: 64px;
+         border-radius: 50%;
+         background: var(--tp-theme-primary, #0156FF);
+         color: #fff;
+         font-size: 22px;
+         font-weight: 800;
+         display: flex; align-items: center; justify-content: center;
+         margin: 0 auto 20px;
+         position: relative;
+         z-index: 1;
+      }
+      .process-step-card:nth-child(2) .process-num { background: #f7941d; }
+      .process-step-card:nth-child(3) .process-num { background: #27ae60; }
+      .process-step-card:nth-child(4) .process-num { background: #8e44ad; }
+      .process-step-card h4 { font-size: 17px; font-weight: 700; color: #202026; margin-bottom: 10px; }
+      .process-step-card p { font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+
+      /* ── WHY IMPLIFY (dark split) ── */
+      .why-dark-area { background: #0c1a3a; padding: 90px 0; }
+      .why-dark-left h2 { font-size: clamp(28px,4vw,42px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+      .why-dark-left p { font-size: 16px; color: rgba(255,255,255,.7); line-height: 1.8; margin-bottom: 32px; }
+      .why-dark-left a { display: inline-block; background: #fff; color: #0156FF; font-weight: 700; padding: 14px 32px; border-radius: 50px; font-size: 15px; text-decoration: none; transition: box-shadow .2s; }
+      .why-dark-left a:hover { box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+      .why-check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .why-check-item { display: flex; align-items: flex-start; gap: 14px; }
+      .why-check-item__icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; flex-shrink: 0; }
+      .why-check-item__text h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+      .why-check-item__text p { font-size: 13px; color: rgba(255,255,255,.6); margin: 0; line-height: 1.6; }
+
+      /* ── CLIENT LOGOS ── */
+      .clients-area { background: #fff; padding: 80px 0; }
+
+      /* ── CTA BANNER ── */
+      .home-cta { background: linear-gradient(135deg, #0156FF 0%, #0040cc 100%); padding: 90px 0; }
+      .home-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+      .home-cta__text h2 { font-size: clamp(26px,4vw,38px); font-weight: 800; color: #fff; margin-bottom: 10px; }
+      .home-cta__text p { font-size: 16px; color: rgba(255,255,255,.8); margin: 0; }
+      .home-cta__buttons { display: flex; gap: 16px; flex-wrap: wrap; flex-shrink: 0; }
+      .btn-cta-white { background: #fff; color: #0156FF; font-weight: 700; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-size: 15px; transition: box-shadow .2s; display: inline-block; }
+      .btn-cta-white:hover { box-shadow: 0 8px 24px rgba(0,0,0,.2); color: #0040cc; }
+      .btn-cta-outline { border: 2px solid rgba(255,255,255,.7); color: #fff; font-weight: 700; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-size: 15px; transition: background .2s; display: inline-block; }
+      .btn-cta-outline:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+      /* Section heading shared */
+      .sh { margin-bottom: 50px; }
+      .sh__sub { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--tp-theme-primary,#0156FF); display: block; margin-bottom: 10px; }
+      .sh__title { font-size: clamp(26px,4vw,38px); font-weight: 800; color: #202026; }
+      .sh__title--light { color: #fff; }
+      .sh__desc { font-size: 16px; color: #666; margin-top: 12px; max-width: 560px; }
+
+      @media (max-width: 991px) {
+         .why-check-grid { grid-template-columns: 1fr; }
+         .home-cta__inner { flex-direction: column; text-align: center; }
+         .home-cta__buttons { justify-content: center; }
+      }
+      @media (max-width: 767px) {
+         .process-step-card::after { display: none; }
+         .services-grid-area, .process-area, .why-dark-area, .clients-area, .home-cta { padding: 60px 0; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="preloader">
+      <div class="preloader"><span></span><span></span></div>
+   </div>
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+   </button>
+
+   <header>
+      <div id="header-sticky" class="tp-header-area header-pl-pr header-border-bottom">
+         <div class="container-fluid">
+            <div class="row g-0 align-items-center">
+               <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                  <div class="tp-logo tp-logo-border">
+                     <a href="index.html">
+                        <img src="assets/img/logo/logo-1.webp" alt="Implify">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-xl-10 col-lg-10 col-md-8 col-6 d-flex justify-content-end">
+                  <div class="tp-main-menu d-none d-xl-block">
+                     <nav id="mobile-menu">
+                        <ul>
+                           <li class="active"><a href="index.html">Home</a></li>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="service.html">Services</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="tp-header-right">
+                     <ul>
+                        <li><a class="tp-menu-bar" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- offcanvas -->
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__close-btn">
+            <button class="close-btn"><i class="fal fa-times"></i></button>
+         </div>
+         <div class="tpoffcanvas__logo pt-50">
+            <a href="index.html"><img src="assets/img/logo/logo-1.webp" alt=""></a>
+         </div>
+         <div class="tpoffcanvas__text">
+            <p>Achieve your Information Technology goals through Implify services.</p>
+         </div>
+         <div class="mobile-menu"></div>
+         <div class="tpoffcanvas__info">
+            <h3 class="offcanva-title">Get In Touch</h3>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-envelope"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Email</span>
+                  <a href="mailto:info@implifyinc.com">info@implifyinc.com</a>
+               </div>
+            </div>
+            <div class="tp-info-wrapper mb-20 d-flex align-items-center">
+               <div class="tpoffcanvas__info-icon"><a href="#"><i class="fal fa-phone-alt"></i></a></div>
+               <div class="tpoffcanvas__info-address">
+                  <span>Phone (US)</span>
+                  <a href="tel:+13025332345">(302) 533 2345</a>
+               </div>
+            </div>
+         </div>
+         <div class="tpoffcanvas__social">
+            <div class="social-icon">
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-facebook-square"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- ── SECTION 1: HERO ── -->
+      <div class="tp-hero-area hero-grideant-bg" data-background="assets/img/slider/slider-grident-bg.png">
+         <div class="container">
+            <div class="row align-items-center hero-space">
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tp-hero">
+                     <div class="tp-hero__section-box">
+                        <h4 class="tp-section-subtitle wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">Minority-Owned IT Solutions Firm · MBE Certified</h4>
+                        <h2 class="tp-slider-title wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".6s">Transforming Complexity into Competitive Advantage</h2>
+                        <p class="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".8s">Implify delivers intelligent IT consulting, automation, life sciences validation, and talent solutions that help enterprises move faster, operate smarter, and scale with confidence — from Newark, DE to the world.</p>
+                     </div>
+                     <div class="tp-hero__wrapper d-flex align-items-center gap-3 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
+                        <div class="tp-hero-button">
+                           <a class="tp-btn" href="service.html">Explore Services</a>
+                        </div>
+                        <div class="tp-hero-button">
+                           <a class="tp-btn" href="contact.html">Contact Us</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tp-hero__wrapper-thumb p-relative">
+                     <div class="tp-hero-shape-one"><img src="assets/img/slider/hero-star-shape.png" alt=""></div>
+                     <div class="tp-hero-shape-two"><img src="assets/img/slider/hero-circle-shape.png" alt=""></div>
+                     <div class="tp-hero-shape-three"><img src="assets/img/slider/hero-angel-shape.png" alt=""></div>
+                     <div class="tp-hero-shape-four"><img src="assets/img/slider/hero-star-sm-shape.png" alt=""></div>
+                     <div class="tp-hero__thumb text-start text-lg-end wow tpfadeRight" data-wow-duration=".9s" data-wow-delay="1.2s">
+                        <img src="assets/img/slider/hero03.png" alt="Implify IT consulting">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- hero bottom cards -->
+            <div class="row">
+               <div class="col-xl-5 col-lg-5 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="tp-slider-exprience">
+                     <div class="tp-slider-exprience__content">
+                        <h4 class="tp-slider-exp-title">15+ Years of Experience</h4>
+                        <p>Our commitment isn't just to technology — it's to long-term partnerships built on trust, accountability, and measurable outcomes.</p>
+                     </div>
+                     <div class="tp-slider-exprience__client-info d-flex align-items-center">
+                        <div class="tp-slider-exprience__img">
+                           <img src="assets/img/slider/hero-sm-img.png" alt="">
+                        </div>
+                        <div class="tp-slider-exprience__meta">
+                           <h5 class="tp-client-name">Implify Leadership</h5>
+                           <span>Newark, Delaware · USA</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                        <div class="tp-slider-exp-item mb-30">
+                           <div class="tp-slider-exp-item__icon icon-bg-green">
+                              <i class="fal fa-cogs" style="font-size:22px;"></i>
+                           </div>
+                           <div class="tp-slider-exp-item__content">
+                              <h4 class="tp-exp-sm-title">Services We Can Help You With</h4>
+                           </div>
+                           <div class="tp-slider-exp-item__service-link">
+                              <div class="tp-link tp-link-green">
+                                 <a href="service.html">
+                                    <svg width="34" height="16" viewBox="0 0 34 16" fill="none"><path d="M33.7071 8.70711C34.0976 8.31659 34.0976 7.68342 33.7071 7.2929L27.3431 0.928935C26.9526 0.53841 26.3195 0.53841 25.9289 0.928934C25.5384 1.31946 25.5384 1.95262 25.9289 2.34315L31.5858 8L25.9289 13.6569C25.5384 14.0474 25.5384 14.6805 25.9289 15.0711C26.3195 15.4616 26.9526 15.4616 27.3431 15.0711L33.7071 8.70711ZM-8.74228e-08 9L33 9L33 7L8.74228e-08 7L-8.74228e-08 9Z" fill="#202026"/></svg>
+                                    <span>Explore Services</span>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".7s">
+                        <div class="tp-slider-exp-item mb-30">
+                           <div class="tp-slider-exp-item__icon">
+                              <i class="fal fa-award" style="font-size:22px;"></i>
+                           </div>
+                           <div class="tp-slider-exp-item__content">
+                              <h4 class="tp-exp-sm-title">Why You Should Choose Us</h4>
+                           </div>
+                           <div class="tp-slider-exp-item__service-link">
+                              <div class="tp-link">
+                                 <a href="about-us.html">
+                                    <svg width="34" height="16" viewBox="0 0 34 16" fill="none"><path d="M33.7071 8.70711C34.0976 8.31659 34.0976 7.68342 33.7071 7.2929L27.3431 0.928935C26.9526 0.53841 26.3195 0.53841 25.9289 0.928934C25.5384 1.31946 25.5384 1.95262 25.9289 2.34315L31.5858 8L25.9289 13.6569C25.5384 14.0474 25.5384 14.6805 25.9289 15.0711C26.3195 15.4616 26.9526 15.4616 27.3431 15.0711L33.7071 8.70711ZM-8.74228e-08 9L33 9L33 7L8.74228e-08 7L-8.74228e-08 9Z" fill="#202026"/></svg>
+                                    <span>About Us</span>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 2: TRUST MARQUEE STRIP ── -->
+      <div class="trust-strip">
+         <div class="trust-strip__track">
+            <!-- duplicated for seamless loop -->
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> MBE Certified</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> Certified Diversity Supplier — Delaware</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 15+ Years in IT Consulting</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 250+ Projects Delivered</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 50+ Enterprise Clients</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> US · Costa Rica · India</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> FDA/EMA Compliant Validation</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 120+ Technology Specialists</div>
+            <!-- duplicate -->
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> MBE Certified</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> Certified Diversity Supplier — Delaware</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 15+ Years in IT Consulting</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 250+ Projects Delivered</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 50+ Enterprise Clients</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> US · Costa Rica · India</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> FDA/EMA Compliant Validation</div>
+            <div class="trust-strip__item"><i class="fal fa-check-circle"></i> 120+ Technology Specialists</div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 3: ABOUT SNAPSHOT (image left / text right) ── -->
+      <div class="tp-about-area ab-area-sapce pt-120 pb-120">
+         <div class="container">
+            <div class="row align-items-center g-5">
+               <div class="col-xl-5 col-lg-5 order-2 order-lg-1 wow tpfadeLeft" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="tp-ab-wrapper p-relative">
+                     <div class="tp-ab-shape-two z-index-3">
+                        <img src="assets/img/about/about-circle-shape.png" alt="">
+                     </div>
+                     <img src="assets/img/about/about-img.png" alt="Implify consulting">
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 order-1 order-lg-2 wow tpfadeRight" data-wow-duration=".7s" data-wow-delay=".7s">
+                  <div class="tp-ab-section-title-box">
+                     <h4 class="tp-section-subtitle tp-green-color">Who We Are</h4>
+                     <h3 class="tp-section-title">Engineering Intelligent Enterprises for a Digital-First World</h3>
+                     <p style="margin-bottom:16px;">At Implify, we believe technology should create clarity — not complexity. Since our founding we have partnered with organizations across life sciences, manufacturing, and technology to design, modernize, and scale enterprise systems that drive measurable impact.</p>
+                     <p style="margin-bottom:16px;">From strategic IT consulting and application engineering to CQV/CSV validation, enterprise automation, global outsourcing, and staffing — our solutions are built to align technology with business vision.</p>
+                     <p style="margin-bottom:28px;">As a <strong>certified Minority Business Enterprise (MBE)</strong> headquartered in Newark, DE, we bring diversity-driven perspective to every engagement — with onshore, nearshore (Costa Rica), and offshore (India) delivery capabilities.</p>
+                     <a class="tp-btn" href="about-us.html">Learn More About Implify</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 4: SERVICES — icon card grid ── -->
+      <div class="services-grid-area">
+         <div class="container">
+            <div class="text-center sh wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <span class="sh__sub">What We Do</span>
+               <h2 class="sh__title">Our Core Services</h2>
+               <p class="sh__desc" style="margin:12px auto 0;">End-to-end IT and business solutions across six specialized practice areas.</p>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="svc-card svc-card--blue">
+                     <div class="svc-card__icon"><i class="fal fa-sync-alt"></i></div>
+                     <div class="svc-card__title">Technology Transformation</div>
+                     <p class="svc-card__text">Enterprise modernization, cloud migration (AWS, Azure, GCP), ERP/CRM implementations, and IT strategy consulting that future-proofs your technology landscape.</p>
+                     <a href="service-details-technology-transformation.html" class="svc-card__link">Learn More <i class="fal fa-arrow-right"></i></a>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="svc-card svc-card--gold">
+                     <div class="svc-card__icon"><i class="fal fa-laptop-code"></i></div>
+                     <div class="svc-card__title">Application Services</div>
+                     <p class="svc-card__text">Custom application development, legacy modernization, QA &amp; testing, and DevOps engineering across web, mobile, and enterprise platforms.</p>
+                     <a href="service-details.html" class="svc-card__link">Learn More <i class="fal fa-arrow-right"></i></a>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="svc-card svc-card--green">
+                     <div class="svc-card__icon"><i class="fal fa-robot"></i></div>
+                     <div class="svc-card__title">Enterprise Automation</div>
+                     <p class="svc-card__text">RPA, AI/ML integration, IoT solutions, API orchestration, and intelligent process automation to eliminate manual work and accelerate operations.</p>
+                     <a href="service-details-enterprise-automation.html" class="svc-card__link">Learn More <i class="fal fa-arrow-right"></i></a>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="svc-card svc-card--purple">
+                     <div class="svc-card__icon"><i class="fal fa-flask"></i></div>
+                     <div class="svc-card__title">Life Sciences Consulting</div>
+                     <p class="svc-card__text">FDA/EMA-compliant CQV &amp; CSV services for pharma, biotech, and medical device clients — delivered by specialists with hands-on regulated environment experience.</p>
+                     <a href="service-details-life-sciences.html" class="svc-card__link">Learn More <i class="fal fa-arrow-right"></i></a>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".4s">
+                  <div class="svc-card svc-card--teal">
+                     <div class="svc-card__icon"><i class="fal fa-globe-americas"></i></div>
+                     <div class="svc-card__title">Outsourcing Services</div>
+                     <p class="svc-card__text">Flexible onshore, nearshore (Costa Rica), and offshore (India) delivery models that reduce costs while maintaining quality, compliance, and cultural alignment.</p>
+                     <a href="service-details-outsourcing.html" class="svc-card__link">Learn More <i class="fal fa-arrow-right"></i></a>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="svc-card svc-card--red">
+                     <div class="svc-card__icon"><i class="fal fa-users"></i></div>
+                     <div class="svc-card__title">IT &amp; Non-IT Staffing</div>
+                     <p class="svc-card__text">Contract, contract-to-hire, direct placement, and SOW-based staffing across technology, engineering, life sciences, and administrative disciplines.</p>
+                     <a href="service-details-staffing.html" class="svc-card__link">Learn More <i class="fal fa-arrow-right"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="text-center mt-50">
+               <a href="service.html" class="tp-btn">View All Services</a>
+            </div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 5: HOW WE WORK — numbered process steps ── -->
+      <div class="process-area">
+         <div class="container">
+            <div class="text-center sh wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <span class="sh__sub">Our Approach</span>
+               <h2 class="sh__title">How We Work</h2>
+               <p class="sh__desc" style="margin:12px auto 0;">A structured, transparent engagement model built around your goals.</p>
+            </div>
+            <div class="row g-4">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+                  <div class="process-step-card">
+                     <div class="process-num">1</div>
+                     <h4>Discovery &amp; Assessment</h4>
+                     <p>We begin with a deep-dive into your business objectives, technology landscape, and pain points to define a clear engagement scope.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="process-step-card">
+                     <div class="process-num">2</div>
+                     <h4>Solution Design</h4>
+                     <p>Our architects and domain specialists design a tailored solution — technology stack, delivery model, timeline, and resource plan — aligned to your budget.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".7s">
+                  <div class="process-step-card">
+                     <div class="process-num">3</div>
+                     <h4>Agile Delivery</h4>
+                     <p>We execute in iterative sprints with regular demos, transparent reporting, and continuous alignment to ensure scope stays on track.</p>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s">
+                  <div class="process-step-card">
+                     <div class="process-num">4</div>
+                     <h4>Handover &amp; Support</h4>
+                     <p>Post-delivery, we provide documentation, knowledge transfer, and ongoing support options to ensure sustained value from every engagement.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 6: WHY IMPLIFY — dark navy split layout ── -->
+      <div class="why-dark-area">
+         <div class="container">
+            <div class="row g-5 align-items-center">
+               <div class="col-xl-5 col-lg-5 wow tpfadeLeft" data-wow-duration=".7s" data-wow-delay=".5s">
+                  <div class="why-dark-left">
+                     <span style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:12px;">Why Choose Us</span>
+                     <h2>Six Reasons Clients Choose Implify — and Stay</h2>
+                     <p>We combine certified diversity credentials, deep industry expertise, and a proven tri-shore delivery model to deliver outcomes that matter.</p>
+                     <a href="about-us.html">Discover Our Story <i class="fal fa-arrow-right" style="margin-left:6px;"></i></a>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 wow tpfadeRight" data-wow-duration=".7s" data-wow-delay=".7s">
+                  <div class="why-check-grid">
+                     <div class="why-check-item">
+                        <div class="why-check-item__icon"><i class="fal fa-award"></i></div>
+                        <div class="why-check-item__text">
+                           <h5>MBE &amp; Diversity Certified</h5>
+                           <p>Help clients meet supplier diversity goals without trade-offs.</p>
+                        </div>
+                     </div>
+                     <div class="why-check-item">
+                        <div class="why-check-item__icon"><i class="fal fa-flask"></i></div>
+                        <div class="why-check-item__text">
+                           <h5>Life Sciences Depth</h5>
+                           <p>CQV/CSV specialists serving BMS, Pfizer, J&amp;J, Lilly &amp; Merck.</p>
+                        </div>
+                     </div>
+                     <div class="why-check-item">
+                        <div class="why-check-item__icon"><i class="fal fa-globe"></i></div>
+                        <div class="why-check-item__text">
+                           <h5>Tri-Shore Delivery</h5>
+                           <p>US + Costa Rica + India for cost, quality, and time-zone coverage.</p>
+                        </div>
+                     </div>
+                     <div class="why-check-item">
+                        <div class="why-check-item__icon"><i class="fal fa-handshake"></i></div>
+                        <div class="why-check-item__text">
+                           <h5>True Partnership</h5>
+                           <p>We integrate into your team, not just fill seats or deliver deliverables.</p>
+                        </div>
+                     </div>
+                     <div class="why-check-item">
+                        <div class="why-check-item__icon"><i class="fal fa-bolt"></i></div>
+                        <div class="why-check-item__text">
+                           <h5>Rapid Mobilization</h5>
+                           <p>Pre-vetted talent bench means consultants deployed in days, not weeks.</p>
+                        </div>
+                     </div>
+                     <div class="why-check-item">
+                        <div class="why-check-item__icon"><i class="fal fa-chart-line"></i></div>
+                        <div class="why-check-item__text">
+                           <h5>Proven Results</h5>
+                           <p>250+ delivered projects and 50+ long-term enterprise relationships.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 7: CLIENT LOGOS — white, marquee slider ── -->
+      <div class="clients-area">
+         <div class="container">
+            <div class="text-center mb-50 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+               <span class="sh__sub">Trusted By</span>
+               <h2 class="sh__title" style="font-size:clamp(22px,3vw,32px);">Organizations That Trust Implify</h2>
+            </div>
+            <div class="tp-brand-title-box pb-40 text-center">
+               <h4 class="tp-brand-title"><span>250+</span> organizations rely on Implify for technology consulting, staffing, and digital transformation.</h4>
+            </div>
+            <div class="brand-slider-active d-flex align-items-center">
+               <div class="brand-item"><div class="tp-brand-icon"><img src="assets/img/brand/brand-1.png" alt=""></div></div>
+               <div class="brand-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s"><div class="tp-brand-icon"><img src="assets/img/brand/brand-2.png" alt=""></div></div>
+               <div class="brand-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".5s"><div class="tp-brand-icon"><img src="assets/img/brand/brand-3.png" alt=""></div></div>
+               <div class="brand-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".7s"><div class="tp-brand-icon"><img src="assets/img/brand/brand-4.png" alt=""></div></div>
+               <div class="brand-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s"><div class="tp-brand-icon"><img src="assets/img/brand/brand-5.png" alt=""></div></div>
+               <div class="brand-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s"><div class="tp-brand-icon"><img src="assets/img/brand/brand-6.png" alt=""></div></div>
+               <div class="brand-item wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s"><div class="tp-brand-icon"><img src="assets/img/brand/brand-7.png" alt=""></div></div>
+            </div>
+            <div class="text-center mt-40">
+               <a href="clients.html" class="tp-btn">View All Clients</a>
+            </div>
+         </div>
+      </div>
+
+      <!-- ── SECTION 8: CTA — blue gradient, split text + buttons ── -->
+      <div class="home-cta wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".3s">
+         <div class="container">
+            <div class="home-cta__inner">
+               <div class="home-cta__text">
+                  <h2>Ready to Start Your Next IT Engagement?</h2>
+                  <p>Tell us about your project, staffing need, or technology challenge — we'll respond within one business day.</p>
+               </div>
+               <div class="home-cta__buttons">
+                  <a href="contact.html" class="btn-cta-white">Get In Touch</a>
+                  <a href="service.html" class="btn-cta-outline">Our Services</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </main>
+
+   <footer>
+      <div class="tp-footer-area footer-bg pt-130" data-background="assets/img/footer/footer-bg.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Company</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="about-us.html">About Us</a></li>
+                           <li><a href="careers.html">Careers</a></li>
+                           <li><a href="clients.html">Clients</a></li>
+                           <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Services</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="service-details-technology-transformation.html">Technology Transformation</a></li>
+                           <li><a href="service-details.html">Application Services</a></li>
+                           <li><a href="service-details-staffing.html">IT &amp; Non-IT Staffing</a></li>
+                           <li><a href="service-details-life-sciences.html">Life Sciences Consulting</a></li>
+                           <li><a href="service-details-outsourcing.html">Outsourcing Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Certifications</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Certified Diversity Supplier – Delaware</a></li>
+                           <li><a href="#">MBE – City of Philadelphia, PA</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-30">
+                  <div class="tp-footer-widget z-index-3">
+                     <div class="tp-footer-widget__title"><h4 class="tp-footer-title">Contact Us</h4></div>
+                     <div class="tp-footer-widget__list">
+                        <ul class="footer-position">
+                           <li>
+                              <a href="#">
+                                 <span><i class="fal fa-map-marker-alt"></i></span>
+                                 260 Chapman Road, Suite 201C, Newark DE 19702, USA
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailto:info@implifyinc.com">
+                                 <span><i class="fal fa-envelope-open"></i></span>
+                                 info@implifyinc.com
+                              </a>
+                           </li>
+                           <li>
+                              <a href="tel:+13025332345">
+                                 <span><i class="fal fa-phone-alt"></i></span>
+                                 (302) 533 2345
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="tp-newsletter-wrapper z-index-3">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__title">
+                                 <h4 class="tp-newsletter-title">Stay Updated with Industry Insights</h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="tp-newsletter">
+                              <div class="tp-newsletter__input p-relative">
+                                 <form action="#">
+                                    <input type="email" placeholder="Enter your email address">
+                                    <button class="tp-btn-yellow">Subscribe <i class="far fa-arrow-right"></i></button>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copy-right-wrapper z-index-3">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-7 col-12">
+                     <div class="copyright-left text-center text-lg-start">
+                        <p>© 2026 Implify, Inc. All Rights Reserved.</p>
+                     </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-5 col-12">
+                     <div class="copyright-right-side text-center text-lg-end">
+                        <ul>
+                           <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                           <li><a href="terms-of-use.html">Terms of Use</a></li>
+                           <li><a href="cookies-policy.html">Cookies Policy</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <script src="assets/js/jquery.js"></script>
+   <script src="assets/js/waypoints.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/counterup.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/main.js"></script>
+
+</body>
+</html>
