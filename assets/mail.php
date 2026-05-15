@@ -1,111 +1,44 @@
 <?php
-
-
-
-    // Only process POST reqeusts.
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        // Get the form fields and remove MORALspace.
-
-        $name = strip_tags(trim($_POST["name"]));
-
-				$name = str_replace(array("\r","\n"),array(" "," "),$name);
-
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-
-
-        $message = trim($_POST["message"]);
-
-
-
-        // Check that data was sent to the mailer.
-
-        if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-            // Set a 400 (bad request) response code and exit.
-
-            http_response_code(400);
-
-            echo "Please complete the form and try again.";
-
-            exit;
-
-        }
-
-
-
-        // Set the recipient email address.
-
-        // FIXME: Update this to your desired email address.
-
-        $recipient = "basictheme400@gmail.com";
-
-
-
-        // Set the email subject.
-
-        $sender = "New contact from $name";
-
-
-
-        //Email Header
-
-        $head = " /// STTHEMES \\\ ";
-
-
-
-        // Build the email content.
-
-        $email_content = "$head\n\n\n";
-
-        $email_content .= "Name: $name\n";
-
-        $email_content .= "Email: $email\n\n";
-
-        $email_content .= "Message:\n$message\n";
-
-
-
-        // Build the email headers.
-
-        $email_headers = "From: $name <$email>";
-
-
-
-        // Send the email.
-
-        if (mail($recipient, $sender, $email_content, $email_headers)) {
-
-            // Set a 200 (okay) response code.
-
-            http_response_code(200);
-
-            echo "Thank You! Your message has been sent.";
-
-        } else {
-
-            // Set a 500 (internal server error) response code.
-
-            http_response_code(500);
-
-            echo "Oops! Something went wrong and we couldn't send your message.";
-
-        }
-
-
-
-    } else {
-
-        // Not a POST request, set a 403 (forbidden) response code.
-
-        http_response_code(403);
-
-        echo "There was a problem with your submission, please try again.";
-
-    }
-
-
-
-?>
-
+header('Content-Type: text/plain; charset=utf-8');
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(403);
+    echo 'Forbidden.';
+    exit;
+}
+
+function clean($v) { return htmlspecialchars(strip_tags(trim($v)), ENT_QUOTES, 'UTF-8'); }
+
+$name    = clean($_POST['name']    ?? '');
+$company = clean($_POST['company'] ?? '');
+$email   = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+$phone   = clean($_POST['phone']   ?? '');
+$service = clean($_POST['service'] ?? '');
+$message = clean($_POST['message'] ?? '');
+
+if (!$name || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL) || !$message) {
+    http_response_code(400);
+    echo 'Please fill in all required fields.';
+    exit;
+}
+
+$to      = 'info@implifytechnologies.com';
+$subject = "New Contact Form Enquiry from {$name}";
+
+$body  = "Name: {$name}\r\n";
+$body .= $company ? "Company: {$company}\r\n" : '';
+$body .= "Email: {$email}\r\n";
+$body .= $phone   ? "Phone: {$phone}\r\n"   : '';
+$body .= $service ? "Service: {$service}\r\n" : '';
+$body .= "\nMessage:\n{$message}\r\n";
+
+$headers  = "From: Implify Contact Form <noreply@implifytechnologies.com>\r\n";
+$headers .= "Reply-To: {$name} <{$email}>\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+if (mail($to, $subject, $body, $headers)) {
+    echo "Thank you, {$name}! Your message has been sent. We'll be in touch within one business day.";
+} else {
+    http_response_code(500);
+    echo 'Something went wrong. Please email us directly at info@implifytechnologies.com.';
+}
