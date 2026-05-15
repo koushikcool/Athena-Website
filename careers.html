@@ -506,6 +506,7 @@
             <h3 id="applyModalTitle">Apply for this Position</h3>
             <span class="apply-job-title" id="applyJobTitle"></span>
             <form id="applyForm" enctype="multipart/form-data" novalidate>
+               <input type="hidden" name="access_key" value="0ae506e8-3937-4d04-af26-172897c6568b">
                <input type="hidden" name="position" id="applyPositionInput">
                <div class="row g-3">
                   <div class="col-md-6">
@@ -768,7 +769,6 @@
          submitBtn.disabled = true;
          submitBtn.textContent = 'Submitting...';
          var data = new FormData(form);
-         data.append('access_key', '0ae506e8-3937-4d04-af26-172897c6568b');
          data.append('subject', 'Job Application: ' + posInput.value);
          fetch('https://api.web3forms.com/submit', {
             method: 'POST',
