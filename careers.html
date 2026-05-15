@@ -768,21 +768,20 @@
          submitBtn.disabled = true;
          submitBtn.textContent = 'Submitting...';
          var data = new FormData(form);
-         data.append('_subject', 'Job Application: ' + posInput.value);
-         data.append('_captcha', 'false');
-         fetch('https://formsubmit.co/ajax/info@implifytechnologies.com', {
+         data.append('access_key', '0ae506e8-3937-4d04-af26-172897c6568b');
+         data.append('subject', 'Job Application: ' + posInput.value);
+         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            headers: { 'Accept': 'application/json' },
             body: data
          })
          .then(function (r) { return r.json(); })
          .then(function (res) {
-            if (res.success === 'true' || res.success === true) {
+            if (res.success) {
                response.className = 'apply-response success';
                response.textContent = 'Thank you! Your application has been received. We\'ll be in touch soon.';
                submitBtn.textContent = 'Submitted!';
             } else {
-               throw new Error('Failed');
+               throw new Error(res.message || 'Failed');
             }
          })
          .catch(function () {
