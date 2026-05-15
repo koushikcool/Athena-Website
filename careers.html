@@ -101,6 +101,13 @@
       .apply-field input:focus, .apply-field textarea:focus { border-color: #0156FF; box-shadow: 0 0 0 3px rgba(1,86,255,.08); }
       .apply-field input::placeholder, .apply-field textarea::placeholder { color: #bbb; }
       .apply-field textarea { resize: vertical; min-height: 90px; }
+      .apply-upload-box { border: 2px dashed #d0d9f5; border-radius: 12px; padding: 24px; text-align: center; cursor: pointer; transition: border-color .25s, background .25s; background: #f7f9ff; }
+      .apply-upload-box:hover, .apply-upload-box.drag-over { border-color: #0156FF; background: #eef2ff; }
+      .apply-upload-box i { font-size: 28px; color: #0156FF; margin-bottom: 8px; display: block; }
+      .apply-upload-box p { margin: 0; font-size: 14px; color: #666; }
+      .apply-upload-box p span { color: #0156FF; font-weight: 700; }
+      .apply-upload-box small { color: #aaa; font-size: 12px; }
+      .apply-file-name { margin-top: 8px; font-size: 13px; color: #27ae60; font-weight: 600; display: none; }
       .apply-submit { width: 100%; margin-top: 24px; padding: 15px; border: none; border-radius: 10px; background: #0156FF; color: #fff; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit; transition: background .25s; }
       .apply-submit:hover { background: #0040cc; }
       .apply-submit:disabled { background: #9ab4f7; cursor: not-allowed; }
@@ -499,7 +506,6 @@
             <h3 id="applyModalTitle">Apply for this Position</h3>
             <span class="apply-job-title" id="applyJobTitle"></span>
             <form id="applyForm" enctype="multipart/form-data" novalidate>
-               <input type="hidden" name="access_key" value="0ae506e8-3937-4d04-af26-172897c6568b">
                <input type="hidden" name="position" id="applyPositionInput">
                <div class="row g-3">
                   <div class="col-md-6">
@@ -539,9 +545,15 @@
                      </div>
                   </div>
                   <div class="col-12">
-                     <div style="background:#f0f4ff; border:1.5px solid #d0d9f5; border-radius:10px; padding:14px 18px; font-size:14px; color:#333;">
-                        <i class="fas fa-paperclip" style="color:#0156FF; margin-right:6px;"></i>
-                        <strong>Resume / CV:</strong> After submitting, please email your CV to <a href="mailto:info@implifytechnologies.com" style="color:#0156FF; font-weight:700;">info@implifytechnologies.com</a> with the subject <em>"Application – [Position Name]"</em>.
+                     <div class="apply-field">
+                        <label>Resume / CV <span style="color:#e74c3c">*</span></label>
+                        <div class="apply-upload-box" id="uploadBox">
+                           <i class="fas fa-cloud-upload-alt"></i>
+                           <p><span>Click to upload</span> or drag &amp; drop</p>
+                           <small>PDF, DOC, DOCX &mdash; max 5 MB</small>
+                           <input type="file" id="applyResume" name="resume" accept=".pdf,.doc,.docx" style="display:none;" required>
+                        </div>
+                        <div class="apply-file-name" id="applyFileName"><i class="fas fa-check-circle"></i> <span id="applyFileNameText"></span></div>
                      </div>
                   </div>
                </div>
@@ -690,18 +702,23 @@
    <script src="assets/js/jquery.js"></script>
    <script>
    (function () {
-      var overlay   = document.getElementById('applyOverlay');
-      var jobTitle  = document.getElementById('applyJobTitle');
-      var posInput  = document.getElementById('applyPositionInput');
-      var closeBtn  = document.getElementById('applyClose');
-      var form      = document.getElementById('applyForm');
-      var submitBtn = document.getElementById('applySubmitBtn');
-      var response  = document.getElementById('applyResponse');
+      var overlay      = document.getElementById('applyOverlay');
+      var jobTitle     = document.getElementById('applyJobTitle');
+      var posInput     = document.getElementById('applyPositionInput');
+      var closeBtn     = document.getElementById('applyClose');
+      var uploadBox    = document.getElementById('uploadBox');
+      var fileInput    = document.getElementById('applyResume');
+      var fileName     = document.getElementById('applyFileName');
+      var fileNameText = document.getElementById('applyFileNameText');
+      var form         = document.getElementById('applyForm');
+      var submitBtn    = document.getElementById('applySubmitBtn');
+      var response     = document.getElementById('applyResponse');
 
       function openModal(job) {
          jobTitle.textContent = job;
          posInput.value = job;
          form.reset();
+         fileName.style.display = 'none';
          response.className = 'apply-response';
          response.textContent = '';
          submitBtn.disabled = false;
@@ -723,29 +740,44 @@
       overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
+      uploadBox.addEventListener('click', function () { fileInput.click(); });
+      uploadBox.addEventListener('dragover', function (e) { e.preventDefault(); uploadBox.classList.add('drag-over'); });
+      uploadBox.addEventListener('dragleave', function () { uploadBox.classList.remove('drag-over'); });
+      uploadBox.addEventListener('drop', function (e) {
+         e.preventDefault();
+         uploadBox.classList.remove('drag-over');
+         if (e.dataTransfer.files.length) { setFile(e.dataTransfer.files[0]); }
+      });
+      fileInput.addEventListener('change', function () { if (this.files.length) setFile(this.files[0]); });
+
+      function setFile(file) {
+         var allowed = ['application/pdf', 'application/msword',
+                        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+         if (!allowed.includes(file.type)) { alert('Please upload a PDF, DOC, or DOCX file.'); return; }
+         if (file.size > 5 * 1024 * 1024) { alert('File must be under 5 MB.'); return; }
+         var dt = new DataTransfer();
+         dt.items.add(file);
+         fileInput.files = dt.files;
+         fileNameText.textContent = file.name;
+         fileName.style.display = 'block';
+      }
+
       form.addEventListener('submit', function (e) {
          e.preventDefault();
+         if (!fileInput.files.length) { alert('Please upload your resume/CV.'); return; }
          submitBtn.disabled = true;
          submitBtn.textContent = 'Submitting...';
          var data = new FormData(form);
-         data.append('subject', 'Job Application: ' + posInput.value);
-         fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: data
-         })
-         .then(function (r) { return r.json(); })
-         .then(function (res) {
-            if (res.success) {
-               response.className = 'apply-response success';
-               response.textContent = 'Application received! Please also email your CV to info@implifytechnologies.com with subject "Application – ' + posInput.value + '".';
-               submitBtn.textContent = 'Submitted!';
-            } else {
-               throw new Error(res.message || 'Failed');
-            }
+         fetch('assets/apply.php', { method: 'POST', body: data })
+         .then(function (r) { return r.text(); })
+         .then(function (msg) {
+            response.className = 'apply-response success';
+            response.textContent = msg;
+            submitBtn.textContent = 'Submitted!';
          })
          .catch(function () {
             response.className = 'apply-response error';
-            response.textContent = 'Something went wrong. Please email your details and CV to info@implifytechnologies.com.';
+            response.textContent = 'Something went wrong. Please email your CV to info@implifytechnologies.com.';
             submitBtn.disabled = false;
             submitBtn.textContent = 'Submit Application';
          });
