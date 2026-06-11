@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "PowerShell(Start-Process python -ArgumentList \"-m http.server 3000 --directory `\"C:\\\\Users\\\\Admin\\\\Desktop\\\\Athena-Website`\"\" -WindowStyle Hidden -PassThru)",
+      "PowerShell(Start-Sleep -Seconds 2; try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -UseBasicParsing -TimeoutSec 5; \"Status: $\\($r.StatusCode\\), Content-Length: $\\($r.Content.Length\\) bytes\" } catch { $_ })",
+      "PowerShell($r = Invoke-WebRequest -Uri \"http://localhost:3000/contact.html\" -UseBasicParsing -TimeoutSec 5; \"Status: $\\($r.StatusCode\\) | Size: $\\($r.Content.Length\\) bytes\")",
+      "PowerShell(node --version 2>$null)",
+      "PowerShell(npx --version 2>$null)"
+    ]
+  }
+}
