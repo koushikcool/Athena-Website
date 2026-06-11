@@ -14,7 +14,8 @@
       "Bash(echo \"EXIT:$?\")",
       "Bash(echo \"none found \\(exit $?\\)\")",
       "Bash(sed -i '169s|href=\"#\"|href=\"service.html\"|; *)",
-      "Bash(sed -n '169p;213p;291p;321p;351p' index.html)"
+      "Bash(sed -n '169p;213p;291p;321p;351p' index.html)",
+      "PowerShell($content = Get-Content \"C:\\\\Users\\\\Admin\\\\Desktop\\\\Athena-Website\\\\about-us.html\" -Encoding UTF8 -Raw; $matches = [regex]::Matches\\($content, 'â€.'\\); $matches.Value | Sort-Object -Unique | ForEach-Object { $chars = $_.ToCharArray\\(\\); \"$_ -> U+$\\([int]$chars[0]\\):U+$\\([int]$chars[1]\\):U+$\\([int]$chars[2]\\)\" })"
     ]
   }
 }
